@@ -94,155 +94,9 @@
       name="google-site-verification"
       content="xbG9wnNK-b-6XfgEk9JVB_JFU_C4fPAF5DZYAhcsEZQ"
     />
+     <script src="assets/js/products.js"></script>
     <script>
-      const featuredProducts = [
-        {
-          id: "MYRN-1539",
-          name: "Stellar T-Bar Ring",
-          price: 3999,
-          image: "assets/img/MYRN-1539.jpg",
-          tag: "New",
-          rating: 4.5,
-        },
-        {
-          id: "MYRN-284611111111111",
-          name: "Eternal Swirl Ring",
-          price: 3500,
-          image: "assets/img/20260106_082325_0002.png",
-          tag: null,
-          rating: 4,
-        },
-        {
-          id: "MYRN-3688",
-          name: "Golden Embrace Ring",
-          price: 2633.75,
-          image: "assets/img/product-3.jpg",
-          tag: null,
-          rating: 5,
-        },
-        {
-          id: "MYRN-9122",
-          name: "Golden Embrace Ring",
-          price: 3999,
-          image: "assets/img/product-4.jpg",
-          tag: "Sale",
-          rating: 4.5,
-        },
-      ];
-
-      const newProducts = [
-        {
-          id: "NEW-1",
-          name: "Seraphine Loop Earrings",
-          price: 1881.25,
-          image: "assets/img/new-product-1.jpg",
-          tag: "New",
-          rating: 3.5,
-        },
-        {
-          id: "NEW-2",
-          name: "Blue Aurora Set",
-          price: 5643.75,
-          image: "assets/img/new-product-2.jpg",
-          tag: "New",
-          rating: 4,
-        },
-        {
-          id: "NEW-3",
-          name: "Timeless Love Pendant",
-          price: 2633.75,
-          image: "assets/img/new-product-3.jpg",
-          tag: "New",
-          rating: 5,
-        },
-        {
-          id: "NEW-4",
-          name: "Eternal Swirl Ring",
-          price: 2000,
-          image: "assets/img/new-product-4.jpg",
-          tag: "Sale",
-          rating: 4.5,
-        },
-      ];
-
-      const saleProducts = [
-        {
-          id: "SALE-1",
-          name: "Architect Aura Ring",
-          price: 3010,
-          image: "assets/img/sale-product-1.jpg",
-          tag: "Sale",
-          rating: 3.5,
-        },
-        {
-          id: "SALE-2",
-          name: "Eternal Swirl Ring",
-          price: 3500,
-          image: "assets/img/sale-product-2.jpg",
-          tag: "Sale",
-          rating: 4,
-        },
-        {
-          id: "SALE-3",
-          name: "Eternal Swirl Ring",
-          price: 3500,
-          image: "assets/img/product-3.jpg",
-          tag: "Sale",
-          rating: 5,
-        },
-        {
-          id: "SALE-4",
-          name: "Frosted Crown Ring",
-          price: 2770.2,
-          image: "assets/img/new-product-4.jpg",
-          tag: "Sale",
-          rating: 4.5,
-        },
-      ];
-
-      const carouselProducts = [
-        {
-          id: "NEW-CR-1",
-          name: "Stellar T-Bar Ring 4",
-          price: 3999,
-          image: "assets/img/new-product-1.jpg",
-          tag: "New",
-          rating: 3.5,
-        },
-        {
-          id: "NEW-CR-2",
-          name: "Eternal Swirl Ring",
-          price: 3500,
-          image: "assets/img/new-product-2.jpg",
-          tag: "New",
-          rating: 4,
-        },
-        {
-          id: "NEW-CR-3",
-          name: "Celestial Charm Ring3dddddddddddd",
-          price: 3700,
-          image: "assets/img/new-product-3.jpg",
-          tag: "New",
-          rating: 5,
-        },
-        {
-          id: "NEW-CR-4",
-          name: "Chaz Kangeroo Hoodie3",
-          price: 83,
-          image: "assets/img/new-product-4.jpg",
-          tag: "Sale",
-          rating: 4.5,
-        },
-        {
-          id: "NEW-CR-5",
-          name: "Chaz Kangeroo Hoodie4",
-          price: 83,
-          image: "assets/img/new-product-4.jpg",
-          tag: "Sale",
-          rating: 4.5,
-        },
-      ];
-
+    
       function renderStars(rating) {
         const full = Math.floor(rating);
         const half = rating % 1 >= 0.5 ? 1 : 0;
@@ -280,13 +134,13 @@
           item.className = "single-product-item text-center";
           item.innerHTML = `
         <figure class="product-thumb">
-          <a href="single-product.html">
+          <a  href="single-product.html?id=${product.id}">
             <img src="${product.image}" alt="${product.name}" class="img-fluid">
           </a>
         </figure>
 
         <div class="product-details">
-          <h2><a href="single-product.html">${product.name}</a></h2>
+          <h2><a  href="single-product.html?id=${product.id}">${product.name}</a></h2>
           <div class="rating">${renderStars(product.rating)}</div>
           <span class="price">${product.price} AED</span>
           <a href="#" class="btn btn-add-to-cart"
@@ -350,13 +204,13 @@
           item.className = "single-product-item text-center";
           item.innerHTML = `
         <figure class="product-thumb">
-          <a href="single-product.html">
+          <a  href="single-product.html?id=${product.id}">
             <img src="${product.image}" alt="${product.name}" class="img-fluid">
           </a>
         </figure>
 
         <div class="product-details">
-          <h2><a href="single-product.html">${product.name}</a></h2>
+          <h2><a  href="single-product.html?id=${product.id}">${product.name}</a></h2>
           <div class="rating">${renderStars(product.rating)}</div>
           <span class="price">${product.price} AED</span>
           <a href="#" class="btn btn-add-to-cart"
@@ -408,17 +262,17 @@
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        renderTabProducts("#feature-products", featuredProducts);
-        renderTabProducts("#new-products", newProducts);
-        renderTabProducts("#onsale", saleProducts);
-        renderCarousel(".new-products-carousel", carouselProducts);
+        renderTabProducts("#feature-products",  productData.featuredProducts);
+        renderTabProducts("#new-products", productData.newProducts);
+        renderTabProducts("#onsale", productData.saleProducts);
+        renderCarousel(".new-products-carousel", productData.carouselProducts);
       });
       function openQuickView(product) {
         // Update Image Carousel
         const thumbCarousel = document.querySelector(".product-thumb-carousel");
         thumbCarousel.innerHTML = `
       <div class="single-thumb-item">
-        <a href="single-product.html"><img class="img-fluid" src="${product.image}" alt="${product.name}" /></a>
+        <a  href="single-product.html?id=${product.id}"><img class="img-fluid" src="${product.image}" alt="${product.name}" /></a>
       </div>
     `;
 
@@ -456,6 +310,9 @@
         );
       }
     </script>
+
+   
+
   </head>
 
   <body>
@@ -863,7 +720,7 @@
                       /></a>
 
                       <figcaption class="category-name">
-                        <a href="shop-right-full-wide.html">Rings</a>
+                        <a href="shop-right-full-wide.html?category=rings">Rings</a>
                       </figcaption>
                     </figure>
                   </div>
@@ -880,7 +737,8 @@
                       /></a>
 
                       <figcaption class="category-name">
-                        <a href="shop-right-full-wide.html">Ear Rings</a>
+                       <a href="shop-right-full-wide.html?category=earrings">Ear Rings</a>
+
                       </figcaption>
                     </figure>
                   </div>
@@ -1157,7 +1015,7 @@
                 <div class="col-lg-7 col-md-6 mt-5 mt-md-0">
                   <div class="product-details">
                     <h2>
-                      <a href="single-product.html" id="quickview-product-name"
+                      <a  href="single-product.html?id=${product.id}" id="quickview-product-name"
                         >Product Name</a
                       >
                     </h2>
