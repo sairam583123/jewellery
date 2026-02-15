@@ -838,35 +838,10 @@
 
     <!--=== Active Js ===-->
     <script src="assets/js/active.js"></script>
-    <script>
-      const products = [
-        {
-          name: "Crown Summit Backpack",
-          price: 52.0,
-          image: "assets/img/new-product-1.jpg",
-          badge: "New",
-          rating: 3.5,
-          desc: "Ideal for cold-weathered training worked lorem outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.",
-        },
-        {
-          name: "Urban Explorer Bag",
-          price: 49.0,
-          image: "assets/img/new-product-2.jpg",
-          badge: "Sale",
-          rating: 4,
-          desc: "Stylish and spacious backpack for urban adventures, crafted with durable fabric.",
-        },
-        {
-          name: "Mountain Gear Pack",
-          price: 60.0,
-          image: "assets/img/new-product-3.jpg",
-          badge: "New",
-          rating: 5,
-          desc: "Perfect companion for hiking trips with large storage compartments.",
-        },
-        // You can add more product objects here
-      ];
+    <script src="assets/js/products.js"></script>
 
+    <script>
+ 
       function getRatingStars(rating) {
         let starsHTML = "";
         for (let i = 1; i <= 5; i++) {
@@ -881,45 +856,120 @@
         return starsHTML;
       }
 
-      function renderProducts() {
-        const container = document.getElementById("products-container");
-        container.innerHTML = products
-          .map(
-            (product) => `
-    <div class="col-lg-4 col-sm-6">
-      <div class="single-product-item text-center">
-        <figure class="product-thumb">
-          <a href="single-product.html"><img src="${product.image}" alt="${
-              product.name
-            }" class="img-fluid"></a>
-        </figure>
-        <div class="product-details">
-          <h2><a href="single-product.html">${product.name}</a></h2>
-          <div class="rating">${getRatingStars(product.rating)}</div>
-          <span class="price">$${product.price.toFixed(2)}</span>
-          <p class="products-desc">${product.desc}</p>
-          <a href="single-product.html" class="btn btn-add-to-cart">+ Add to Cart</a>
-          <a href="single-product.html" class="btn btn-add-to-cart btn-whislist">+ Wishlist</a>
-          <a href="single-product.html" class="btn btn-add-to-cart btn-compare">+ Compare</a>
-        </div>
-        <div class="product-meta">
-          <button type="button" data-toggle="modal" data-target="#quickView">
-            <span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="fa fa-compress"></i></span>
-          </button>
-          <a href="#" data-toggle="tooltip" data-placement="left" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-          <a href="#" data-toggle="tooltip" data-placement="left" title="Compare"><i class="fa fa-tags"></i></a>
-        </div>
-        <span class="product-bedge ${product.badge.toLowerCase()}">${
-              product.badge
-            }</span>
-      </div>
-    </div>
-  `
-          )
-          .join("");
-      }
 
-      renderProducts();
+      function renderProducts(productList =  productData.products) {
+  const container = document.getElementById("products-container");
+
+  if (!container) return;
+
+  if (!productList.length) {
+    container.innerHTML = `
+      <div class="col-12 text-center">
+        <h4>No products found</h4>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = productList
+    .map((product) => `
+      <div class="col-lg-4 col-sm-6">
+        <div class="single-product-item text-center">
+          
+          <figure class="product-thumb">
+            <a href="single-product.html?id=${product.id}">
+              <img src="${product.image}" 
+                   alt="${product.name}" 
+                   class="img-fluid">
+            </a>
+          </figure>
+
+          <div class="product-details">
+            <h2>
+              <a href="single-product.html?id=${product.id}">
+                ${product.name}
+              </a>
+            </h2>
+
+            <div class="rating">
+              ${getRatingStars(product.rating || 0)}
+            </div>
+
+            <span class="price">
+              ${product.price} AED
+            </span>
+
+            <p class="products-desc">
+              ${product.desc || ""}
+            </p>
+
+            <a href="single-product.html?id=${product.id}" 
+               class="btn btn-add-to-cart">
+              + Add to Cart
+            </a>
+          </div>
+
+          <div class="product-meta">
+            <button type="button" 
+                    data-toggle="modal" 
+                    data-target="#quickView">
+              <span data-toggle="tooltip" 
+                    data-placement="left" 
+                    title="Quick View">
+                <i class="fa fa-compress"></i>
+              </span>
+            </button>
+
+            <a href="#" data-toggle="tooltip" 
+               data-placement="left" 
+               title="Add to Wishlist">
+              <i class="fa fa-heart-o"></i>
+            </a>
+
+            <a href="#" data-toggle="tooltip" 
+               data-placement="left" 
+               title="Compare">
+              <i class="fa fa-tags"></i>
+            </a>
+          </div>
+
+          ${
+            product.badge
+              ? `<span class="product-bedge ${product.badge.toLowerCase()}">
+                   ${product.badge}
+                 </span>`
+              : ""
+          }
+
+        </div>
+      </div>
+    `)
+    .join("");
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  if (!productData || !productData.products) {
+    console.error("Products not loaded correctly");
+    return;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const selectedCategory = params.get("category");
+
+  let filteredProducts = productData.products;
+
+  if (selectedCategory) {
+    filteredProducts = productData.products.filter(
+      product => product.category === selectedCategory
+    );
+  }
+
+  renderProducts(filteredProducts);
+
+});
+
     </script>
   </body>
 </html>
