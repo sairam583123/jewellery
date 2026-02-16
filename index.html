@@ -75,19 +75,64 @@
     </script>
 
     <script>
-      function addToCart(id, name, price, image) {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+   
+   function renderMiniCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartBody = document.getElementById("mini-cart-body");
+  const cartCount = document.getElementById("cart-count");
 
-        const index = cart.findIndex((item) => item.id === id);
-        if (index !== -1) {
-          cart[index].quantity += 1;
-        } else {
-          cart.push({ id, name, price, image, quantity: 1 });
-        }
+  cartBody.innerHTML = "";
 
-        localStorage.setItem("cart", JSON.stringify(cart));
-        alert(name + " added to cart!");
-      }
+  let totalItems = 0;
+
+  if (cart.length === 0) {
+    cartBody.innerHTML = "<p style='padding:15px'>Cart is empty</p>";
+    cartCount.innerText = 0;
+    return;
+  }
+
+  cart.forEach((item, index) => {
+    totalItems += item.quantity;
+
+    cartBody.innerHTML += `
+      <div class="single-cart-item d-flex">
+        <figure class="product-thumb">
+          <a href="single-product.html?id=${item.id}">
+            <img class="img-fluid" src="${item.image}" alt="${item.name}" />
+          </a>
+        </figure>
+
+        <div class="product-details">
+          <h2>
+            <a href="single-product.html?id=${item.id}">
+              ${item.name}
+            </a>
+          </h2>
+          <div class="cal d-flex align-items-center">
+            <span class="quantity">${item.quantity}</span>
+            <span class="multiplication">X</span>
+            <span class="price">${item.price} AED</span>
+          </div>
+        </div>
+
+        <a href="#" class="remove-icon" onclick="removeFromCart(${index})">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </div>
+    `;
+  });
+
+  cartCount.innerText = totalItems;
+}
+
+
+function removeFromCart(index) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderMiniCart();
+}
+
     </script>
 
     <meta
@@ -109,20 +154,23 @@
         );
       }
 
+
       function addToCart(id, name, price, image) {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const index = cart.findIndex((item) => item.id === id);
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const index = cart.findIndex(item => item.id === id);
 
-        if (index !== -1) {
-          cart[index].quantity += 1;
-        } else {
-          cart.push({ id, name, price, image, quantity: 1 });
-        }
+  if (index !== -1) {
+    cart[index].quantity += 1;
+  } else {
+    cart.push({ id, name, price, image, quantity: 1 });
+  }
 
-        localStorage.setItem("cart", JSON.stringify(cart));
-        alert(name + " added to cart!");
-      }
+  localStorage.setItem("cart", JSON.stringify(cart));
 
+  renderMiniCart(); // ✅ immediately refresh cart
+}
+
+   
       function renderCarousel(selector, products) {
         const container = document.querySelector(selector);
         if (!container) return;
@@ -144,7 +192,7 @@
           <div class="rating">${renderStars(product.rating)}</div>
           <span class="price">${product.price} AED</span>
           <a href="#" class="btn btn-add-to-cart"
-             onclick="addToCart('${product.id}', '${product.name}', ${
+             onclick="event.preventDefault();addToCart('${product.id}', '${product.name}', ${
             product.price
           }, '${product.image}')">
             + Add to Cart
@@ -213,12 +261,11 @@
           <h2><a  href="single-product.html?id=${product.id}">${product.name}</a></h2>
           <div class="rating">${renderStars(product.rating)}</div>
           <span class="price">${product.price} AED</span>
-          <a href="#" class="btn btn-add-to-cart"
-             onclick="addToCart('${product.id}', '${product.name}', ${
-            product.price
-          }, '${product.image}')">
-            + Add to Cart
-          </a>
+         <button type="button"
+   class="btn btn-add-to-cart"
+   onclick="event.preventDefault();addToCart('1','Ring',500,'img.jpg')">
+   + Add to Cart
+</button>
           ${
             product.tag
               ? `<span class="product-bedge ${product.tag.toLowerCase()}">${
@@ -370,84 +417,23 @@
                 </li>
 
                 <li class="shop-cart">
-                  <a href="#"
-                    ><i class="fa fa-shopping-bag"></i>
-                    <span class="count">3</span></a
-                  >
-                  <div class="mini-cart">
-                    <div class="mini-cart-body">
-                      <div class="single-cart-item d-flex">
-                        <figure class="product-thumb">
-                          <a href="#"
-                            ><img
-                              class="img-fluid"
-                              src="assets/img/product-1.jpg"
-                              alt="Products"
-                          /></a>
-                        </figure>
+  <a href="#">
+    <i class="fa fa-shopping-bag"></i>
+    <span class="count" id="cart-count">0</span>
+  </a>
 
-                        <div class="product-details">
-                          <h2><a href="#">Sprite Yoga Companion</a></h2>
-                          <div class="cal d-flex align-items-center">
-                            <span class="quantity">3</span>
-                            <span class="multiplication">X</span>
-                            <span class="price">$77.00</span>
-                          </div>
-                        </div>
-                        <a href="#" class="remove-icon"
-                          ><i class="fa fa-trash-o"></i
-                        ></a>
-                      </div>
-                      <div class="single-cart-item d-flex">
-                        <figure class="product-thumb">
-                          <a href="#"
-                            ><img
-                              class="img-fluid"
-                              src="assets/img/product-2.jpg"
-                              alt="Products"
-                          /></a>
-                        </figure>
-                        <div class="product-details">
-                          <h2><a href="#">Yoga Companion Kit</a></h2>
-                          <div class="cal d-flex align-items-center">
-                            <span class="quantity">2</span>
-                            <span class="multiplication">X</span>
-                            <span class="price">$6.00</span>
-                          </div>
-                        </div>
-                        <a href="#" class="remove-icon"
-                          ><i class="fa fa-trash-o"></i
-                        ></a>
-                      </div>
-                      <div class="single-cart-item d-flex">
-                        <figure class="product-thumb">
-                          <a href="#"
-                            ><img
-                              class="img-fluid"
-                              src="assets/img/product-3.jpg"
-                              alt="Products"
-                          /></a>
-                        </figure>
-                        <div class="product-details">
-                          <h2><a href="#">Sprite Yoga Companion Kit</a></h2>
-                          <div class="cal d-flex align-items-center">
-                            <span class="quantity">1</span>
-                            <span class="multiplication">X</span>
-                            <span class="price">$116.00</span>
-                          </div>
-                        </div>
-                        <a href="#" class="remove-icon"
-                          ><i class="fa fa-trash-o"></i
-                        ></a>
-                      </div>
-                    </div>
-                    <div class="mini-cart-footer">
-                      <a href="checkout.html" class="btn-add-to-cart"
-                        >Checkout</a
-                      >
-                    </div>
-                  </div>
-                </li>
+  <div class="mini-cart">
+    <div class="mini-cart-body" id="mini-cart-body">
+      <!-- Items will load dynamically -->
+    </div>
+
+    <div class="mini-cart-footer">
+      <a href="checkout.html" class="btn-add-to-cart">Checkout</a>
+    </div>
+  </div>
+</li>
+
+          
               </ul>
             </div>
           </div>
@@ -1124,5 +1110,11 @@
     <script src="assets/js/plugins/owl-carousel.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMiniCart();
+  });
+</script> 
   </body>
 </html>
