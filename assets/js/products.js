@@ -36,7 +36,7 @@ const productData = {
   },
 
   {
-    id: "MYRN-284611111111111",
+    id: "MYRN-28461",
     name: "Eternal Swirl Ring",
     price: 3500,
     image: "assets/img/20260106_082325_0002.png",
@@ -838,7 +838,11 @@ products: [
     ]
   }
 ]
-
-
-
 }
+
+
+const shopProducts = [
+  ...productData.featuredProducts,
+  ...productData.newProducts,
+  ...productData.saleProducts
+];
