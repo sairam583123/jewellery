@@ -288,43 +288,50 @@
           renderTabProducts("#onsale", productData.saleProducts);
           renderCarousel(".new-products-carousel", productData.carouselProducts);
         });
+       
+
         function openQuickView(product) {
-          // Update Image Carousel
-          const thumbCarousel = document.querySelector(".product-thumb-carousel");
-          thumbCarousel.innerHTML = `
-        <div class="single-thumb-item">
-          <a  href="single-product.html?id=${product.id}"><img class="img-fluid" src="${product.image}" alt="${product.name}" /></a>
-        </div>
-      `;
 
-          document.querySelector("#quickView .product-details h2 a").innerText =
-            product.name;
+  const thumbCarousel = document.querySelector(".product-thumb-carousel");
+  thumbCarousel.innerHTML = `
+    <div class="single-thumb-item">
+      <a href="single-product.html?id=${product.id}">
+        <img class="img-fluid" src="${product.image}" alt="${product.name}" />
+      </a>
+    </div>
+  `;
 
-          document.querySelector(
-            "#quickView .product-details .rating"
-          ).innerHTML = renderStars(product.rating);
+  // Product Name
+  const nameLink = document.querySelector("#quickview-product-name");
+  nameLink.innerText = product.name;
+  nameLink.setAttribute("href", `single-product.html?id=${product.id}`);
 
-          document.querySelector(
-            "#quickView .product-details .price"
-          ).innerText = `${product.price} AED`;
+  // Rating
+  document.querySelector("#quickview-product-rating").innerHTML =
+    renderStars(product.rating);
 
-          document.querySelector(
-            "#quickView .product-sku-status"
-          ).innerHTML = `<strong>SKU</strong> ${product.id}`;
+  // Price
+  document.querySelector("#quickview-product-price").innerText =
+    `${product.price} AED`;
 
-          document.querySelector("#quickView .products-desc").innerText =
-            product.description ||
-            "Elegant handcrafted piece from Myara's latest collection.";
+  // SKU
+  document.querySelector("#quickview-product-sku").innerHTML =
+    `<strong>SKU</strong> - ${product.id}`;
 
-          const addToCartBtn = document.querySelector(
-            "#quickView .btn-add-to-cart"
-          );
-          addToCartBtn.setAttribute(
-            "onclick",
-            `addToCart('${product.id}', '${product.name}', ${product.price}, '${product.image}')`
-          );
-        }
-      </script>
+  // Description
+  document.querySelector("#quickview-product-description").innerHTML =
+    product.description || "Elegant handcrafted piece from Myara's collection.";
+
+  // Add To Cart Button
+  document.querySelector("#quickview-add-to-cart").setAttribute(
+    "onclick",
+    `addToCart('${product.id}', '${product.name}', ${product.price}, '${product.image}')`
+  );
+}
+
+    
+    
+    </script>
 
 
     </head>
@@ -459,12 +466,11 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="about-image-wrap">
-                <a href="about.html"
-                  ><img
+              <img
                     src="assets/img/4_20251119_083724_0003.png"
                     alt="About Us"
                     class="img-fluid"
-                /></a>
+                />
               </div>
             </div>
 
@@ -776,8 +782,8 @@
                   <div class="col-lg-7 col-md-6 mt-5 mt-md-0">
                     <div class="product-details">
                       <h2>
-                        <a  href="single-product.html?id=${product.id}" id="quickview-product-name"
-                          >Product Name</a
+                        <a href="#" id="quickview-product-name">
+Product Name</a
                         >
                       </h2>
 
