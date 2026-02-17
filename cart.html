@@ -50,79 +50,9 @@
     <![endif]-->
     <script>
 
-function updateQty(index, qty) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart[index].quantity = parseInt(qty);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  loadCart();
-}
 
-function removeFromCart(index) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.splice(index, 1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  loadCart();
-}
-
-document.addEventListener("DOMContentLoaded", loadCart);
 </script>
-<script>
-function loadCart() {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const tbody = document.getElementById("cart-body");
-  tbody.innerHTML = "";
 
-  let subtotal = 0;
-
-  cart.forEach((item, index) => {
-    const itemTotal = item.price * item.quantity;
-    subtotal += itemTotal;
-
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td class="pro-thumbnail">
-        <a href="#"><img src="${item.image}" class="img-fluid" width="80" /></a>
-      </td>
-      <td class="pro-title"><a href="#">${item.name}</a></td>
-      <td class="pro-price"><span>${item.price} AED</span></td>
-      <td class="pro-quantity">
-        <div class="pro-qty">
-          <input type="number" min="1" value="${item.quantity}" onchange="updateQty(${index}, this.value)">
-        </div>
-      </td>
-      <td class="pro-subtotal"><span>${itemTotal} AED</span></td>
-      <td class="pro-remove">
-        <a href="#" onclick="removeFromCart(${index})"><i class="fa fa-trash-o"></i></a>
-      </td>
-    `;
-    tbody.appendChild(row);
-  });
-
-  // Cart totals
-  const shipping = 70;
-  const total = subtotal + shipping;
-
-  document.getElementById("subtotal").innerText = `${subtotal} AED`;
-  document.getElementById("shipping").innerText = `${shipping} AED`;
-  document.getElementById("grand-total").innerText = `${total} AED`;
-}
-
-function updateQty(index, value) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart[index].quantity = parseInt(value);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  loadCart();
-}
-
-function removeFromCart(index) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.splice(index, 1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  loadCart();
-}
-
-document.addEventListener("DOMContentLoaded", loadCart);
-</script>
 
 
 
@@ -220,75 +150,12 @@ document.addEventListener("DOMContentLoaded", loadCart);
                 <li class="shop-cart">
                   <a href="#"
                     ><i class="fa fa-shopping-bag"></i>
-                    <span class="count">3</span></a
+                    <span class="count">0</span></a
                   >
                   <div class="mini-cart">
-                    <div class="mini-cart-body">
-                      <div class="single-cart-item d-flex">
-                        <figure class="product-thumb">
-                          <a href="#"
-                            ><img
-                              class="img-fluid"
-                              src="assets/img/product-1.jpg"
-                              alt="Products"
-                          /></a>
-                        </figure>
+                 
+                    <div class="mini-cart-body" id="mini-cart-body"></div>
 
-                        <div class="product-details">
-                          <h2><a href="#">Sprite Yoga Companion</a></h2>
-                          <div class="cal d-flex align-items-center">
-                            <span class="quantity">3</span>
-                            <span class="multiplication">X</span>
-                            <span class="price">$77.00</span>
-                          </div>
-                        </div>
-                        <a href="#" class="remove-icon"
-                          ><i class="fa fa-trash-o"></i
-                        ></a>
-                      </div>
-                      <div class="single-cart-item d-flex">
-                        <figure class="product-thumb">
-                          <a href="#"
-                            ><img
-                              class="img-fluid"
-                              src="assets/img/product-2.jpg"
-                              alt="Products"
-                          /></a>
-                        </figure>
-                        <div class="product-details">
-                          <h2><a href="#">Yoga Companion Kit</a></h2>
-                          <div class="cal d-flex align-items-center">
-                            <span class="quantity">2</span>
-                            <span class="multiplication">X</span>
-                            <span class="price">$6.00</span>
-                          </div>
-                        </div>
-                        <a href="#" class="remove-icon"
-                          ><i class="fa fa-trash-o"></i
-                        ></a>
-                      </div>
-                      <div class="single-cart-item d-flex">
-                        <figure class="product-thumb">
-                          <a href="#"
-                            ><img
-                              class="img-fluid"
-                              src="assets/img/product-3.jpg"
-                              alt="Products"
-                          /></a>
-                        </figure>
-                        <div class="product-details">
-                          <h2><a href="#">Sprite Yoga Companion Kit</a></h2>
-                          <div class="cal d-flex align-items-center">
-                            <span class="quantity">1</span>
-                            <span class="multiplication">X</span>
-                            <span class="price">$116.00</span>
-                          </div>
-                        </div>
-                        <a href="#" class="remove-icon"
-                          ><i class="fa fa-trash-o"></i
-                        ></a>
-                      </div>
-                    </div>
                     <div class="mini-cart-footer">
                       <a href="checkout.html" class="btn-add-to-cart"
                         >Checkout</a
@@ -372,14 +239,25 @@ document.addEventListener("DOMContentLoaded", loadCart);
 
             <!-- Cart Update Option -->
             <div class="cart-update-option d-block d-lg-flex">
-              <div class="apply-coupon-wrapper">
-                <form action="#" method="post" class="d-block d-md-flex">
-                  <input type="text" placeholder="Enter Your Coupon Code" />
-                  <button class="btn-add-to-cart">Apply Coupon</button>
-                </form>
-              </div>
+             <div class="apply-coupon-wrapper">
+  <form onsubmit="applyCoupon(event)" class="d-block d-md-flex">
+    <input 
+      type="text" 
+      id="coupon-code" 
+      placeholder="Enter Your Coupon Code" 
+    />
+    <button type="submit" class="btn-add-to-cart">
+      Apply Coupon
+    </button>
+  </form>
+
+  <small id="coupon-message" style="display:none;"></small>
+</div>
+
               <div class="cart-update">
-                <a href="#" class="btn-add-to-cart">Update Cart</a>
+              <a href="#" class="btn-add-to-cart" onclick="validateUpdateCart(event)">
+  Update Cart
+</a>
               </div>
             </div>
           </div>
@@ -440,5 +318,175 @@ document.addEventListener("DOMContentLoaded", loadCart);
 
     <!--=== Active Js ===-->
     <script src="assets/js/active.js"></script>
+  
+
+    <script>
+const SHIPPING_COST = 70;
+
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function loadCart() {
+  const cart = getCart();
+  const tbody = document.getElementById("cart-body");
+  const cartCount = document.querySelector(".count");
+  const miniBody = document.getElementById("mini-cart-body");
+
+  if (!tbody) return;
+
+  tbody.innerHTML = "";
+  if (miniBody) miniBody.innerHTML = "";
+
+  let subtotal = 0;
+  let totalItems = 0;
+
+  if (cart.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="6" class="text-center">
+          Your cart is empty
+        </td>
+      </tr>
+    `;
+  }
+
+  cart.forEach((item, index) => {
+    const itemTotal = item.price * item.quantity;
+
+    subtotal += itemTotal;
+    totalItems += item.quantity;
+
+    // Table
+    tbody.innerHTML += `
+      <tr>
+        <td><img src="${item.image}" width="80"></td>
+        <td>${item.name}</td>
+        <td>${item.price} AED</td>
+        <td>
+          <input type="number" min="1" value="${item.quantity}" 
+            onchange="updateQty(${index}, this.value)">
+        </td>
+        <td>${itemTotal} AED</td>
+        <td>
+          <button onclick="removeFromCart(${index})">X</button>
+        </td>
+      </tr>
+    `;
+
+    // Mini Cart
+   // Mini Cart
+if (miniBody) {
+  miniBody.innerHTML += `
+    <div class="single-cart-item d-flex">
+      <figure class="product-thumb">
+        <a href="single-product.html?id=${item.id}">
+          <img class="img-fluid" src="${item.image}" alt="${item.name}" />
+        </a>
+      </figure>
+
+      <div class="product-details">
+        <h2>
+          <a href="single-product.html?id=${item.id}">
+            ${item.name}
+          </a>
+        </h2>
+
+        <div class="cal d-flex align-items-center">
+          <span class="quantity">${item.quantity}</span>
+          <span class="multiplication">X</span>
+          <span class="price">${item.price} AED</span>
+        </div>
+      </div>
+
+      <a href="#" class="remove-icon" onclick="removeFromCart(${index})">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </div>
+  `;
+}
+
+  });
+
+  const total = subtotal + SHIPPING_COST;
+
+  document.getElementById("subtotal").innerText = subtotal + " AED";
+  document.getElementById("shipping").innerText = SHIPPING_COST + " AED";
+  document.getElementById("grand-total").innerText = total + " AED";
+
+  if (cartCount) cartCount.innerText = totalItems;
+}
+
+function updateQty(index, value) {
+  let cart = getCart();
+  cart[index].quantity = parseInt(value);
+  saveCart(cart);
+  loadCart();
+}
+
+function removeFromCart(index) {
+  let cart = getCart();
+  cart.splice(index, 1);
+  saveCart(cart);
+  loadCart();
+}
+
+document.addEventListener("DOMContentLoaded", loadCart);
+
+
+function validateUpdateCart(e) {
+  e.preventDefault();
+
+  const couponInput = document.getElementById("coupon-code");
+  const message = document.getElementById("coupon-message"); // FIXED
+
+  if (!couponInput.value.trim()) {
+    message.style.display = "block";
+    message.style.color = "red";
+    message.innerText = "Please apply coupon before updating cart.";
+    couponInput.style.border = "1px solid red";
+  } else {
+    message.style.display = "none";
+    couponInput.style.border = "";
+    alert("Cart updated successfully!");
+  }
+}
+
+
+function applyCoupon(e) {
+  e.preventDefault();
+
+  const input = document.getElementById("coupon-code");
+  const message = document.getElementById("coupon-message");
+
+  if (!input.value.trim()) {
+    message.style.display = "block";
+    message.style.color = "red";
+    message.innerText = "Please enter a coupon code.";
+    input.style.border = "1px solid red";
+    return;
+  }
+
+  // Example fake validation
+  if (input.value.trim().toLowerCase() === "myara10") {
+    message.style.display = "block";
+    message.style.color = "green";
+    message.innerText = "Coupon applied successfully!";
+    input.style.border = "1px solid green";
+  } else {
+    message.style.display = "block";
+    message.style.color = "red";
+    message.innerText = "Invalid coupon code.";
+    input.style.border = "1px solid red";
+  }
+}
+
+
+</script>
+
   </body>
 </html>
