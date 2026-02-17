@@ -291,13 +291,8 @@
 
               <div class="products-settings-option d-block d-md-flex">
                 <nav class="page-pagination">
-                  <ul class="pagination">
-                    <li><a href="#" aria-label="Previous">&laquo;</a></li>
-                    <li><a class="current" href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#" aria-label="Next">&raquo;</a></li>
-                  </ul>
+                 <ul class="pagination" id="pagination"></ul>
+
                 </nav>
 
                 <div
@@ -308,7 +303,7 @@
                     <option value="9">9</option>
                     <option value="15">15</option>
                     <option value="21">21</option>
-                    <option value="6">27</option>
+                    <option value="27">27</option>
                   </select>
                 </div>
               </div>
@@ -365,29 +360,16 @@
                       </ul>
                     </div>
 
-                    <div class="shopping-option-item">
-                      <h4>MANUFACTURER</h4>
-                      <ul class="sidebar-list">
-                        <li><a href="#">Dolce (19)</a></li>
-                        <li><a href="#">Gabbana (4)</a></li>
-                        <li><a href="#">Nike (3)</a></li>
-                        <li><a href="#">Nokia (5)</a></li>
-                        <li><a href="#">Xiaomi (7)</a></li>
-                        <li><a href="#">Other (33)</a></li>
-                      </ul>
-                    </div>
+               <div class="shopping-option-item">
+  <h4>CATEGORIES</h4>
+  <ul class="sidebar-list" id="category-list"></ul>
+</div>
 
-                    <div class="shopping-option-item">
-                      <h4>Price</h4>
-                      <ul class="sidebar-list">
-                        <li><a href="#">$0.00 - $9.99 (2)</a></li>
-                        <li><a href="#">$10.00 - $19.99 (3)</a></li>
-                        <li><a href="#">$20.00 - $29.99 (5)</a></li>
-                        <li><a href="#">$30.00 - $39.99 (2)</a></li>
-                        <li><a href="#">$40.00 - $49.99 (10)</a></li>
-                        <li><a href="#">$50.00 - $59.99 (12)</a></li>
-                      </ul>
-                    </div>
+<div class="shopping-option-item">
+  <h4>PRICE (AED)</h4>
+  <ul class="sidebar-list" id="price-list"></ul>
+</div>
+
                   </div>
                 </div>
               </div>
@@ -693,43 +675,8 @@
                 <!-- Product Thumbnail Start -->
                 <div class="col-lg-5 col-md-6">
                   <div class="product-thumbnail-wrap">
-                    <div class="product-thumb-carousel owl-carousel">
-                      <div class="single-thumb-item">
-                        <a href="single-product.html"
-                          ><img
-                            class="img-fluid"
-                            src="assets/img/single-pro-thumb.jpg"
-                            alt="Product"
-                        /></a>
-                      </div>
-
-                      <div class="single-thumb-item">
-                        <a href="single-product.html"
-                          ><img
-                            class="img-fluid"
-                            src="assets/img/single-pro-thumb-2.jpg"
-                            alt="Product"
-                        /></a>
-                      </div>
-
-                      <div class="single-thumb-item">
-                        <a href="single-product.html"
-                          ><img
-                            class="img-fluid"
-                            src="assets/img/single-pro-thumb-3.jpg"
-                            alt="Product"
-                        /></a>
-                      </div>
-
-                      <div class="single-thumb-item">
-                        <a href="single-product.html"
-                          ><img
-                            class="img-fluid"
-                            src="assets/img/single-pro-thumb-4.jpg"
-                            alt="Product"
-                        /></a>
-                      </div>
-                    </div>
+                  <div class="product-thumb-carousel owl-carousel" id="quick-images">
+</div>
                   </div>
                 </div>
                 <!-- Product Thumbnail End -->
@@ -737,35 +684,25 @@
                 <!-- Product Details Start -->
                 <div class="col-lg-7 col-md-6 mt-5 mt-md-0">
                   <div class="product-details">
-                    <h2>
-                      <a href="single-product.html">Crown Summit Backpack</a>
-                    </h2>
+                  <h2>
+  <a href="#" id="quick-title">Product Name</a>
+</h2>
 
-                    <div class="rating">
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star-half"></i>
-                      <i class="fa fa-star-o"></i>
-                    </div>
 
-                    <span class="price">$52.00</span>
+                  <div class="rating" id="quick-rating"></div>
+
+
+<span class="price" id="quick-price"></span>
 
                     <div class="product-info-stock-sku">
                       <span class="product-stock-status">In Stock</span>
-                      <span class="product-sku-status ml-5"
-                        ><strong>SKU</strong> MH03</span
-                      >
+                    <span class="product-sku-status ml-5">
+  <strong>SKU</strong> <span id="quick-sku"></span>
+</span>
                     </div>
 
-                    <p class="products-desc">
-                      Ideal for cold-weathered training worked lorem ipsum
-                      outdoors, the Chaz Hoodie promises superior warmth with
-                      every wear. Thick material blocks out the wind as ribbed
-                      cuffs and bottom band seal in body heat Lorem ipsum dolor
-                      sit amet, consectetur adipisicing elit. Enim,
-                      reprehenderit.
-                    </p>
+                   <p class="products-desc" id="quick-desc"></p>
+
                     <div class="shopping-option-item">
                       <h4>Color</h4>
                       <ul class="color-option-select d-flex">
@@ -857,25 +794,37 @@
       }
 
 
-      function renderProducts(productList =  productData.products) {
+  function renderProducts(productList) {
+
   const container = document.getElementById("products-container");
+  const pagination = document.getElementById("pagination");
+  const showPerPage = document.getElementById("show-per-page");
 
   if (!container) return;
 
-  if (!productList.length) {
-    container.innerHTML = `
-      <div class="col-12 text-center">
-        <h4>No products found</h4>
-      </div>
-    `;
-    return;
-  }
+  const params = new URLSearchParams(window.location.search);
+  const currentPage = Number(params.get("page")) || 1;
+  const perPageFromURL = Number(params.get("perPage"));
+const perPage = perPageFromURL || 9;
+showPerPage.value = perPage;
 
-  container.innerHTML = productList
-    .map((product) => `
+// const perPage = 2;
+
+  const totalProducts = productList.length;
+  const totalPages = Math.ceil(totalProducts / perPage);
+
+  const start = (currentPage - 1) * perPage;
+  const end = start + perPage;
+  const paginatedProducts = productList.slice(start, end);
+
+  /* ======================
+     RENDER PRODUCTS
+  ====================== */
+
+  container.innerHTML = paginatedProducts.map(product => `
       <div class="col-lg-4 col-sm-6">
         <div class="single-product-item text-center">
-          
+
           <figure class="product-thumb">
             <a href="single-product.html?id=${product.id}">
               <img src="${product.image}" 
@@ -899,10 +848,6 @@
               ${product.price} AED
             </span>
 
-            <p class="products-desc">
-              ${product.desc || ""}
-            </p>
-
             <a href="single-product.html?id=${product.id}" 
                class="btn btn-add-to-cart">
               + Add to Cart
@@ -910,66 +855,220 @@
           </div>
 
           <div class="product-meta">
-            <button type="button" 
-                    data-toggle="modal" 
-                    data-target="#quickView">
-              <span data-toggle="tooltip" 
-                    data-placement="left" 
-                    title="Quick View">
-                <i class="fa fa-compress"></i>
-              </span>
+            <button type="button"
+              class="quick-view-btn"
+              data-id="${product.id}"
+              data-toggle="modal"
+              data-target="#quickView">
+              <i class="fa fa-compress"></i>
             </button>
-
-            <a href="#" data-toggle="tooltip" 
-               data-placement="left" 
-               title="Add to Wishlist">
-              <i class="fa fa-heart-o"></i>
-            </a>
-
-            <a href="#" data-toggle="tooltip" 
-               data-placement="left" 
-               title="Compare">
-              <i class="fa fa-tags"></i>
-            </a>
           </div>
-
-          ${
-            product.badge
-              ? `<span class="product-bedge ${product.badge.toLowerCase()}">
-                   ${product.badge}
-                 </span>`
-              : ""
-          }
 
         </div>
       </div>
-    `)
-    .join("");
+  `).join("");
+
+
+  /* ======================
+   RENDER PAGINATION
+====================== */
+
+pagination.innerHTML = "";
+
+if (totalPages <= 1) return;
+
+for (let i = 1; i <= totalPages; i++) {
+
+  const newParams = new URLSearchParams(window.location.search);
+  newParams.set("page", i);
+  newParams.set("perPage", perPage);
+
+  pagination.innerHTML += `
+    <li>
+      <a href="?${newParams.toString()}" 
+         class="${i === currentPage ? "current" : ""}">
+        ${i}
+      </a>
+    </li>
+  `;
+}
+
+
+
+
 }
 
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  if (!productData || !productData.products) {
-    console.error("Products not loaded correctly");
-    return;
-  }
+  document.getElementById("show-per-page")
+    .addEventListener("change", function () {
 
-  const params = new URLSearchParams(window.location.search);
-  const selectedCategory = params.get("category");
+      const params = new URLSearchParams(window.location.search);
 
-  let filteredProducts = productData.products;
+      params.set("perPage", this.value);
+      params.set("page", 1);
 
-  if (selectedCategory) {
-    filteredProducts = productData.products.filter(
-      product => product.category === selectedCategory
-    );
-  }
-
-  renderProducts(filteredProducts);
+      window.location.search = params.toString();
+  });
 
 });
 
+    
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const allProducts = [
+    ...productData.featuredProducts,
+    ...productData.newProducts,
+    ...productData.saleProducts,
+    ...productData.carouselProducts,
+    ...productData.products
+  ];
+
+  const params = new URLSearchParams(window.location.search);
+  const selectedCategory = params.get("category");
+  const minPrice = params.get("min");
+  const maxPrice = params.get("max");
+
+  let filteredProducts = allProducts;
+
+  if (selectedCategory) {
+    filteredProducts = filteredProducts.filter(
+      p => p.category === selectedCategory
+    );
+  }
+
+  if (minPrice && maxPrice) {
+    filteredProducts = filteredProducts.filter(
+      p => p.price >= Number(minPrice) && p.price <= Number(maxPrice)
+    );
+  }
+
+  /* 🔥 IMPORTANT — render here */
+  renderProducts(filteredProducts);
+  console.log(filteredProducts.length);
+
+
+  /* =============================
+     CATEGORY DYNAMIC
+  ============================== */
+
+  const categoryList = document.getElementById("category-list");
+  categoryList.innerHTML = "";
+
+  const categories = ["earrings", "necklace", "rings", "bracelets"];
+
+  categories.forEach(cat => {
+    const count = allProducts.filter(p => p.category === cat).length;
+
+    if (count > 0) {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <a href="?category=${cat}">
+          ${cat.charAt(0).toUpperCase() + cat.slice(1)} (${count})
+        </a>
+      `;
+      categoryList.appendChild(li);
+    }
+  });
+
+  /* =============================
+     PRICE RANGE DYNAMIC (AED)
+  ============================== */
+
+  const priceList = document.getElementById("price-list");
+  priceList.innerHTML = "";
+
+  const ranges = [
+    { min: 0, max: 199 },
+    { min: 200, max: 299 },
+    { min: 300, max: 399 },
+    { min: 400, max: 499 },
+    { min: 500, max: 999 }
+  ];
+
+  ranges.forEach(range => {
+    const count = allProducts.filter(p => 
+      p.price >= range.min && p.price <= range.max
+    ).length;
+
+    if (count > 0) {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <a href="?min=${range.min}&max=${range.max}">
+          ${range.min} AED - ${range.max} AED (${count})
+        </a>
+      `;
+      priceList.appendChild(li);
+    }
+  });
+
+});
+
+document.addEventListener("click", function (e) {
+
+  const button = e.target.closest(".quick-view-btn");
+  if (!button) return;
+
+  const productId = button.getAttribute("data-id");
+
+  const allProducts = [
+    ...productData.featuredProducts,
+    ...productData.newProducts,
+    ...productData.saleProducts,
+    ...productData.carouselProducts,
+    ...productData.products
+  ];
+
+  const product = allProducts.find(p => p.id === productId);
+  if (!product) return;
+
+  // Update Title
+  document.getElementById("quick-title").innerText = product.name;
+
+  // Update Price
+  document.getElementById("quick-price").innerText = product.price + " AED";
+
+  // Update Description
+  document.getElementById("quick-desc").innerHTML = product.desc || "";
+
+  // Update SKU
+  document.getElementById("quick-sku").innerText = product.id;
+
+  // Update Rating
+  document.getElementById("quick-rating").innerHTML =
+    getRatingStars(product.rating || 0);
+
+  // Update Images
+  const imageContainer = document.getElementById("quick-images");
+  imageContainer.innerHTML = "";
+
+  const images = product.images || [product.image];
+
+  images.forEach(img => {
+    imageContainer.innerHTML += `
+      <div class="single-thumb-item">
+        <img class="img-fluid" src="${img}" alt="${product.name}">
+      </div>
+    `;
+  });
+
+  // Reinitialize Owl Carousel
+  setTimeout(() => {
+    $("#quick-images").owlCarousel({
+      items: 1,
+      loop: true,
+      nav: true,
+      dots: false
+    });
+  }, 200);
+
+});
+
+
+</script>
+
   </body>
 </html>
