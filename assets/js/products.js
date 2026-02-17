@@ -1,845 +1,382 @@
 const productData = {
 
-
-      featuredProducts: [
+  featuredProducts: [
   {
     id: "MYRN-1539",
-    name: "Stellar T-Bar Ring",
-    price: 3999,
+    name: "Stellar T-Bar Statement Ring",
+    price: 95,
     image: "assets/img/MYRN-1539.jpg",
     tag: "New",
     rating: 4.5,
-
     description: `
-    <p>This Stellar T-Bar Ring is crafted with precision and elegance.
-    A timeless design made for modern royalty.</p>
-
+    <p>A bold T-bar inspired ring with a sleek polished gold-tone finish, designed for modern minimalist styling.</p>
     <ul>
-      <li>Premium gold polish</li>
-      <li>Scratch resistant finish</li>
-      <li>Lightweight & comfortable</li>
+      <li>Contemporary T-bar structure</li>
+      <li>Glossy gold-tone plating</li>
+      <li>Comfortable everyday wear</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Aisha Khan",
-        rating: 5,
-        comment: "Absolutely stunning piece. Looks even better in real life!"
-      },
-      {
-        name: "Rohan Mehta",
-        rating: 4,
-        comment: "Great quality and shine. Delivery was fast."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "MYRN-28461",
-    name: "Eternal Swirl Ring",
-    price: 3500,
+    name: "Eternal Swirl Gold Ring",
+    price: 85,
     image: "assets/img/20260106_082325_0002.png",
     tag: null,
     rating: 4,
-
     description: `
-    <p>The Eternal Swirl Ring features a graceful spiral design
-    symbolizing infinity and everlasting elegance.</p>
-
+    <p>An elegant spiral-designed ring with smooth curves and a refined polished finish, perfect for casual chic styling.</p>
     <ul>
-      <li>Elegant swirl pattern</li>
-      <li>High shine gold finish</li>
-      <li>Perfect for daily wear</li>
+      <li>Soft swirl silhouette</li>
+      <li>Polished gold-tone surface</li>
+      <li>Lightweight daily accessory</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Sneha Reddy",
-        rating: 4,
-        comment: "Very elegant design. Looks classy and unique."
-      },
-      {
-        name: "Imran Shaikh",
-        rating: 4,
-        comment: "Comfortable to wear and beautifully crafted."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "MYRN-3688",
-    name: "Golden Embrace Ring",
-    price: 2633.75,
+    name: "Golden Embrace Wrap Ring",
+    price: 75,
     image: "assets/img/product-3.jpg",
     tag: null,
     rating: 5,
-
     description: `
-    <p>The Golden Embrace Ring wraps your finger in a soft,
-    luxurious golden curve inspired by timeless love.</p>
-
+    <p>A stylish wrap-around ring featuring a smooth flowing design and elegant gold-tone finish.</p>
     <ul>
-      <li>Classic wrap-around design</li>
-      <li>Glossy premium finish</li>
-      <li>Lightweight & skin-friendly</li>
+      <li>Modern wrap silhouette</li>
+      <li>High-shine plating</li>
+      <li>Perfect for everyday elegance</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Priya Sharma",
-        rating: 5,
-        comment: "One of the best rings I’ve purchased. Amazing quality!"
-      },
-      {
-        name: "Rahul Verma",
-        rating: 5,
-        comment: "Perfect gift option. My wife loved it!"
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "MYRN-9122",
-    name: "Golden Embrace Ring",
-    price: 3999,
+    name: "Golden Embrace Luxe Edition Ring",
+    price: 99,
     image: "assets/img/product-4.jpg",
     tag: "Sale",
     rating: 4.5,
-
     description: `
-    <p>This special edition Golden Embrace Ring combines bold
-    elegance with modern minimal style.</p>
-
+    <p>A refined edition of the Golden Embrace ring featuring a bold finish and statement presence.</p>
     <ul>
-      <li>Limited sale edition</li>
-      <li>Premium polish with durable finish</li>
-      <li>Statement yet subtle look</li>
+      <li>Premium gold-tone polish</li>
+      <li>Elegant curved detailing</li>
+      <li>Ideal for evening styling</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Nisha Patel",
-        rating: 5,
-        comment: "Loved the shine and finish. Worth every rupee!"
-      },
-      {
-        name: "Arjun Rao",
-        rating: 4,
-        comment: "Beautiful ring. Looks exactly like the photos."
-      }
-    ]
+    reviews: []
   }
 ],
 
-
-     newProducts: [
+newProducts: [
   {
     id: "NEW-1",
-    name: "Seraphine Loop Earrings",
-    price: 1881.25,
+    name: "Seraphine Gold Loop Earrings",
+    price: 49,
     image: "assets/img/new-product-1.jpg",
     tag: "New",
     rating: 3.5,
-
     description: `
-    <p>The Seraphine Loop Earrings feature a soft circular design
-    that blends elegance with everyday charm.</p>
-
+    <p>Elegant gold-tone loop earrings with a clean circular silhouette, perfect for daily wear.</p>
     <ul>
-      <li>Sleek loop silhouette</li>
-      <li>High-polish gold finish</li>
-      <li>Lightweight & easy to style</li>
+      <li>Minimal hoop-inspired design</li>
+      <li>Lightweight comfort</li>
+      <li>Versatile styling piece</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Meera Joshi",
-        rating: 4,
-        comment: "Simple yet classy. Perfect for office wear."
-      },
-      {
-        name: "Karthik Nair",
-        rating: 3,
-        comment: "Good quality for the price. Very comfortable."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "NEW-2",
-    name: "Blue Aurora Set",
-    price: 5643.75,
+    name: "Blue Aurora Crystal Set",
+    price: 189,
     image: "assets/img/new-product-2.jpg",
     tag: "New",
     rating: 4,
-
     description: `
-    <p>The Blue Aurora Set captures the glow of twilight skies
-    with its radiant blue stones and elegant craftsmanship.</p>
-
+    <p>A stunning crystal necklace and earrings set featuring radiant blue stones with a luxurious sparkle.</p>
     <ul>
-      <li>Premium blue crystal stones</li>
       <li>Matching necklace & earrings</li>
-      <li>Perfect for festive occasions</li>
+      <li>Premium crystal shine</li>
+      <li>Perfect for weddings & occasions</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Ananya Rao",
-        rating: 4,
-        comment: "The blue stones shine beautifully. Looks luxurious."
-      },
-      {
-        name: "Zain Ali",
-        rating: 4,
-        comment: "Great set for weddings and parties."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "NEW-3",
-    name: "Timeless Love Pendant",
-    price: 2633.75,
+    name: "Timeless Heart Pendant",
+    price: 69,
     image: "assets/img/new-product-3.jpg",
     tag: "New",
     rating: 5,
-
     description: `
-    <p>The Timeless Love Pendant is designed to symbolize
-    affection and elegance in one delicate piece.</p>
-
+    <p>A delicate heart-inspired pendant with a soft gold-tone finish, ideal for gifting.</p>
     <ul>
-      <li>Romantic heart-inspired design</li>
-      <li>Fine gold polish</li>
-      <li>Perfect gift for special moments</li>
+      <li>Romantic design</li>
+      <li>Elegant polish</li>
+      <li>Perfect everyday necklace</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Ritika Malhotra",
-        rating: 5,
-        comment: "Absolutely beautiful. Makes a perfect gift!"
-      },
-      {
-        name: "Aditya Singh",
-        rating: 5,
-        comment: "Elegant and meaningful design. Loved it."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "NEW-4",
-    name: "Eternal Swirl Ring",
-    price: 2000,
+    name: "Eternal Swirl Modern Ring",
+    price: 65,
     image: "assets/img/new-product-4.jpg",
     tag: "Sale",
     rating: 4.5,
-
     description: `
-    <p>This edition of the Eternal Swirl Ring features a bold,
-    flowing pattern that adds a modern touch to a classic design.</p>
-
+    <p>A modern take on the swirl design featuring bold curves and polished gold styling.</p>
     <ul>
-      <li>Elegant spiral structure</li>
-      <li>Durable anti-tarnish finish</li>
-      <li>Perfect for casual & formal wear</li>
+      <li>Statement swirl pattern</li>
+      <li>Glossy gold finish</li>
+      <li>Comfort-fit design</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Pooja Desai",
-        rating: 5,
-        comment: "Amazing shine and very stylish design."
-      },
-      {
-        name: "Vikram Kulkarni",
-        rating: 4,
-        comment: "Looks premium and fits perfectly."
-      }
-    ]
+    reviews: []
   }
 ],
 
-
-      saleProducts: [
+saleProducts: [
   {
     id: "SALE-1",
     name: "Architect Aura Ring",
-    price: 3010,
+    price: 79,
     image: "assets/img/sale-product-1.jpg",
     tag: "Sale",
     rating: 3.5,
-
     description: `
-    <p>The Architect Aura Ring blends structured geometry
-    with elegant curves for a bold modern statement.</p>
-
+    <p>A geometric-inspired gold-tone ring with a bold contemporary structure.</p>
     <ul>
-      <li>Contemporary architectural design</li>
-      <li>Premium gold-tone plating</li>
-      <li>Durable & comfortable fit</li>
+      <li>Modern architectural look</li>
+      <li>Durable plating</li>
+      <li>Comfortable fit</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Divya Menon",
-        rating: 4,
-        comment: "Very unique design. Looks modern and stylish."
-      },
-      {
-        name: "Sameer Kapoor",
-        rating: 3,
-        comment: "Nice finish and comfortable to wear daily."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "SALE-2",
-    name: "Eternal Swirl Ring",
-    price: 3500,
+    name: "Eternal Swirl Classic Ring",
+    price: 70,
     image: "assets/img/sale-product-2.jpg",
     tag: "Sale",
     rating: 4,
-
     description: `
-    <p>This Eternal Swirl Ring features an elegant spiral
-    inspired by infinity and timeless beauty.</p>
-
+    <p>A classic swirl-designed ring offering timeless elegance in a polished gold finish.</p>
     <ul>
-      <li>Graceful swirl pattern</li>
-      <li>Anti-tarnish coating</li>
-      <li>Perfect for gifting</li>
+      <li>Elegant spiral detail</li>
+      <li>Smooth finish</li>
+      <li>Daily wear accessory</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Anjali Verma",
-        rating: 4,
-        comment: "Beautiful ring with classy shine."
-      },
-      {
-        name: "Ritesh Yadav",
-        rating: 4,
-        comment: "Good quality and great price during sale."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "SALE-3",
-    name: "Eternal Swirl Ring",
-    price: 3500,
+    name: "Eternal Swirl Premium Ring",
+    price: 75,
     image: "assets/img/product-3.jpg",
     tag: "Sale",
     rating: 5,
-
     description: `
-    <p>A premium edition of the Eternal Swirl Ring designed
-    with enhanced polish and superior finish.</p>
-
+    <p>An upgraded swirl edition featuring enhanced polish and refined shine.</p>
     <ul>
-      <li>Luxury high-gloss surface</li>
-      <li>Elegant everyday style</li>
-      <li>Lightweight & skin-friendly</li>
+      <li>Luxury gloss finish</li>
+      <li>Elegant styling</li>
+      <li>Lightweight comfort</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Kavya Sharma",
-        rating: 5,
-        comment: "Absolutely love this ring. Looks premium!"
-      },
-      {
-        name: "Manish Arora",
-        rating: 5,
-        comment: "Perfect fit and excellent craftsmanship."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "SALE-4",
-    name: "Frosted Crown Ring",
-    price: 2770.2,
+    name: "Frosted Crown Crystal Ring",
+    price: 89,
     image: "assets/img/new-product-4.jpg",
     tag: "Sale",
     rating: 4.5,
-
     description: `
-    <p>The Frosted Crown Ring shines with subtle sparkle,
-    inspired by royal crowns and timeless glamour.</p>
-
+    <p>A crown-inspired crystal ring designed to add sparkle and glamour to evening looks.</p>
     <ul>
-      <li>Crown-inspired design</li>
-      <li>Crystal-studded detailing</li>
-      <li>Elegant party wear piece</li>
+      <li>Crown silhouette</li>
+      <li>Crystal detailing</li>
+      <li>Perfect party accessory</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Neha Bansal",
-        rating: 5,
-        comment: "Such a royal look! Perfect for special occasions."
-      },
-      {
-        name: "Amit Chawla",
-        rating: 4,
-        comment: "Nice sparkle and comfortable to wear."
-      }
-    ]
+    reviews: []
   }
 ],
-
-      carouselProducts: [
-  {
-    id: "NEW-CR-1",
-    name: "Stellar T-Bar Ring",
-    price: 3999,
-    image: "assets/img/new-product-1.jpg",
-    tag: "New",
-    rating: 3.5,
-
-    description: `
-    <p>The Stellar T-Bar Ring in this exclusive carousel edition
-    offers a bold minimal silhouette with refined shine.</p>
-
-    <ul>
-      <li>Signature T-bar structure</li>
-      <li>High-polish gold finish</li>
-      <li>Perfect statement piece</li>
-    </ul>
-    `,
-
-    reviews: [
-      {
-        name: "Riya Kapoor",
-        rating: 4,
-        comment: "Trendy and elegant. Looks very stylish!"
-      },
-      {
-        name: "Farhan Sheikh",
-        rating: 3,
-        comment: "Nice bold design. Good for casual outfits."
-      }
-    ]
-  },
-
-  {
-    id: "NEW-CR-2",
-    name: "Eternal Swirl Ring",
-    price: 3500,
-    image: "assets/img/new-product-2.jpg",
-    tag: "New",
-    rating: 4,
-
-    description: `
-    <p>The Eternal Swirl Ring symbolizes infinity with
-    a graceful spiral design and luminous polish.</p>
-
-    <ul>
-      <li>Elegant swirl detailing</li>
-      <li>Anti-tarnish coating</li>
-      <li>Comfortable everyday wear</li>
-    </ul>
-    `,
-
-    reviews: [
-      {
-        name: "Tanvi Shah",
-        rating: 4,
-        comment: "Very classy and comfortable to wear."
-      },
-      {
-        name: "Armaan Gill",
-        rating: 4,
-        comment: "Love the shine and smooth finish."
-      }
-    ]
-  },
-
-  {
-    id: "NEW-CR-3",
-    name: "Celestial Charm Ring",
-    price: 3700,
-    image: "assets/img/new-product-3.jpg",
-    tag: "New",
-    rating: 5,
-
-    description: `
-    <p>The Celestial Charm Ring captures the beauty of
-    starlit skies with its delicate and radiant design.</p>
-
-    <ul>
-      <li>Star-inspired detailing</li>
-      <li>Premium crystal accents</li>
-      <li>Elegant evening wear piece</li>
-    </ul>
-    `,
-
-    reviews: [
-      {
-        name: "Ishita Roy",
-        rating: 5,
-        comment: "Absolutely magical design. My favorite purchase!"
-      },
-      {
-        name: "Dev Malhotra",
-        rating: 5,
-        comment: "Premium look and amazing sparkle."
-      }
-    ]
-  },
-
-  {
-    id: "NEW-CR-4",
-    name: "Frosted Crown Ring",
-    price: 2770,
-    image: "assets/img/new-product-4.jpg",
-    tag: "Sale",
-    rating: 4.5,
-
-    description: `
-    <p>The Frosted Crown Ring radiates royal elegance
-    with crystal detailing and graceful curves.</p>
-
-    <ul>
-      <li>Crown-inspired silhouette</li>
-      <li>Fine gold polish</li>
-      <li>Ideal for festive occasions</li>
-    </ul>
-    `,
-
-    reviews: [
-      {
-        name: "Shreya Patel",
-        rating: 5,
-        comment: "Looks royal and elegant. Love it!"
-      },
-      {
-        name: "Nikhil Arora",
-        rating: 4,
-        comment: "Beautiful sparkle and premium finish."
-      }
-    ]
-  },
-
-  {
-    id: "NEW-CR-5",
-    name: "Golden Embrace Ring",
-    price: 2633.75,
-    image: "assets/img/new-product-4.jpg",
-    tag: "Sale",
-    rating: 4.5,
-
-    description: `
-    <p>The Golden Embrace Ring wraps your finger in
-    timeless luxury with a soft flowing design.</p>
-
-    <ul>
-      <li>Elegant wrap-around style</li>
-      <li>Glossy anti-tarnish finish</li>
-      <li>Lightweight & skin-friendly</li>
-    </ul>
-    `,
-
-    reviews: [
-      {
-        name: "Ankita Verma",
-        rating: 5,
-        comment: "Very elegant and classy design."
-      },
-      {
-        name: "Rahul Mehra",
-        rating: 4,
-        comment: "Perfect for gifting. Looks premium."
-      }
-    ]
-  }
-],
-
 
 products: [
   {
     id: "ER-01",
-    name: "Sapphire Drop Elegance Earrings",
-    price: 289,
+    name: "Sapphire Drop Earrings",
+    price: 59,
     image: "assets/img/ear-rings/myara-er-01.jpg",
     badge: "Bestseller",
     rating: 4.6,
     category: "earrings",
-
     description: `
-    <p>Delicate silver-toned drop earrings featuring deep sapphire blue stones that shimmer with every movement.</p>
-
+    <p>Elegant drop earrings featuring deep sapphire-toned crystals for a refined evening look.</p>
     <ul>
-      <li>Elegant vertical drop design</li>
-      <li>Rich sapphire crystal finish</li>
-      <li>Perfect for evening occasions</li>
+      <li>Vertical drop design</li>
+      <li>Rich blue crystal shine</li>
+      <li>Perfect occasion wear</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Aarohi Sharma",
-        rating: 5,
-        comment: "Absolutely beautiful and very elegant."
-      },
-      {
-        name: "Kunal Verma",
-        rating: 4,
-        comment: "Looks premium and classy."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "ER-02",
     name: "Ruby Bloom Stud Earrings",
-    price: 219,
+    price: 49,
     image: "assets/img/ear-rings/myara-er-02.jpg",
     badge: "New",
     rating: 4.4,
     category: "earrings",
-
     description: `
-    <p>Floral-inspired stud earrings set with rich ruby red crystals arranged in a blooming cluster.</p>
-
+    <p>Floral ruby crystal studs designed for subtle elegance and everyday sparkle.</p>
     <ul>
-      <li>Compact floral cluster design</li>
-      <li>Deep ruby red crystals</li>
-      <li>Lightweight daily wear</li>
+      <li>Compact floral design</li>
+      <li>Lightweight wear</li>
+      <li>Classic red crystal tone</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Nisha Gupta",
-        rating: 4,
-        comment: "Cute and perfect for festive wear."
-      },
-      {
-        name: "Rohit Jain",
-        rating: 4,
-        comment: "Good quality at this price."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "ER-03",
     name: "Crystal Hoop Charm Earrings",
-    price: 179,
+    price: 39,
     image: "assets/img/ear-rings/myara-er-03.jpg",
     badge: "Trending",
     rating: 4.3,
     category: "earrings",
-
     description: `
-    <p>Minimal silver hoops accented with dangling clear crystal charms for a soft sparkle.</p>
-
+    <p>Minimal hoop earrings accented with delicate crystal drops for subtle shimmer.</p>
     <ul>
-      <li>Modern open hoop design</li>
-      <li>Subtle crystal charm detail</li>
-      <li>Ideal for casual styling</li>
+      <li>Modern hoop style</li>
+      <li>Light crystal detailing</li>
+      <li>Comfortable all-day wear</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Pooja Singh",
-        rating: 4,
-        comment: "Simple and stylish. Love the sparkle!"
-      },
-      {
-        name: "Aditya Rao",
-        rating: 4,
-        comment: "Very lightweight and comfortable."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "ER-04",
     name: "Golden Luxe Cascade Earrings",
-    price: 349,
+    price: 89,
     image: "assets/img/ear-rings/myara-er-04.jpg",
     badge: "Premium",
     rating: 4.7,
     category: "earrings",
-
     description: `
-    <p>Statement gold-tone cascade earrings adorned with shimmering white stones in a dramatic layered drop.</p>
-
+    <p>Statement cascade earrings with shimmering stones and a bold gold-tone finish.</p>
     <ul>
-      <li>Layered cascade silhouette</li>
-      <li>High-shine gold finish</li>
-      <li>Perfect for weddings & parties</li>
+      <li>Layered drop design</li>
+      <li>High-shine plating</li>
+      <li>Wedding & party ready</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Shalini Kapoor",
-        rating: 5,
-        comment: "Absolutely stunning for special occasions!"
-      },
-      {
-        name: "Varun Mehta",
-        rating: 5,
-        comment: "Looks luxurious and elegant."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "ER-05",
     name: "Blush Radiance Statement Earrings",
-    price: 329,
+    price: 79,
     image: "assets/img/ear-rings/myara-er-05.jpg",
     badge: "Limited",
     rating: 4.5,
     category: "earrings",
-
     description: `
-    <p>Bold chandelier-style earrings featuring soft blush pink crystals with radiant reflective detailing.</p>
-
+    <p>Chandelier-style earrings with soft blush crystals and elegant sparkle.</p>
     <ul>
-      <li>Chandelier-inspired design</li>
-      <li>Soft blush pink stones</li>
-      <li>High-fashion statement look</li>
+      <li>Bold statement design</li>
+      <li>Pink crystal accents</li>
+      <li>Perfect for celebrations</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Ira Deshmukh",
-        rating: 5,
-        comment: "So elegant and eye-catching!"
-      },
-      {
-        name: "Manav Arora",
-        rating: 4,
-        comment: "Beautiful party wear earrings."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "ER-06",
     name: "Emerald Teardrop Royal Earrings",
-    price: 399,
+    price: 99,
     image: "assets/img/ear-rings/myara-er-06.jpg",
     badge: "Exclusive",
     rating: 4.8,
     category: "earrings",
-
     description: `
-    <p>Stunning emerald-style teardrop earrings framed with delicate crystal accents.</p>
-
+    <p>Royal emerald-inspired drop earrings framed with sparkling crystal accents.</p>
     <ul>
-      <li>Deep green statement stone</li>
-      <li>Crystal border detailing</li>
-      <li>Royal heirloom-inspired look</li>
+      <li>Deep green centerpiece</li>
+      <li>Crystal border finish</li>
+      <li>Luxury-inspired look</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Zoya Khan",
-        rating: 5,
-        comment: "Absolutely royal and gorgeous!"
-      },
-      {
-        name: "Arvind Nair",
-        rating: 5,
-        comment: "My favorite earrings so far."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "ER-08",
-    name: "Ruby Bloom Radiance Stud Earrings",
-    price: 349,
+    name: "Ruby Bloom Radiance Earrings",
+    price: 69,
     image: "assets/img/ear-rings/myara-er-07.jpg",
     badge: "New",
     rating: 4.7,
     category: "earrings",
-
     description: `
-    <p>Floral stud earrings featuring deep ruby stones arranged in a radiant bloom design.</p>
-
+    <p>Radiant ruby floral earrings designed to add bold elegance to festive outfits.</p>
     <ul>
-      <li>Intricate petal setting</li>
-      <li>Bold romantic style</li>
-      <li>Perfect festive accessory</li>
+      <li>Petal-style setting</li>
+      <li>Vibrant ruby crystals</li>
+      <li>Ideal festive accessory</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Tanisha Verma",
-        rating: 5,
-        comment: "Perfect for weddings!"
-      },
-      {
-        name: "Karan Shah",
-        rating: 4,
-        comment: "Rich color and nice finish."
-      }
-    ]
+    reviews: []
   },
 
   {
     id: "ER-09",
     name: "Crystal Whisper Hoop Earrings",
-    price: 299,
+    price: 65,
     image: "assets/img/ear-rings/myara-er-08.jpg",
     badge: "Trending",
     rating: 4.6,
     category: "earrings",
-
     description: `
-    <p>Elegant elongated silver hoops with a delicate crystal drop that sparkles beautifully.</p>
-
+    <p>Sleek elongated hoops with a delicate crystal drop for refined elegance.</p>
     <ul>
-      <li>Minimal modern hoop</li>
-      <li>Crystal drop accent</li>
-      <li>Perfect evening accessory</li>
+      <li>Minimal hoop design</li>
+      <li>Subtle crystal sparkle</li>
+      <li>Perfect evening styling</li>
     </ul>
     `,
-
-    reviews: [
-      {
-        name: "Neha Kapoor",
-        rating: 5,
-        comment: "Elegant and very classy."
-      },
-      {
-        name: "Rahul Singh",
-        rating: 4,
-        comment: "Great shine and lightweight."
-      }
-    ]
+    reviews: []
   }
 ]
-}
 
+};
 
 const shopProducts = [
   ...productData.featuredProducts,
