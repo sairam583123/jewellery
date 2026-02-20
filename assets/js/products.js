@@ -1,6 +1,6 @@
 const productData = {
 
-  featuredProducts: [
+featuredProducts: [
   {
     id: "MYRN-1539",
     name: "Stellar T-Bar Statement Ring",
@@ -8,17 +8,10 @@ const productData = {
     image: "assets/img/MYRN-1539.jpg",
     tag: "New",
     rating: 4.5,
-    description: `
-    <p>A bold T-bar inspired ring with a sleek polished gold-tone finish, designed for modern minimalist styling.</p>
-    <ul>
-      <li>Contemporary T-bar structure</li>
-      <li>Glossy gold-tone plating</li>
-      <li>Comfortable everyday wear</li>
-    </ul>
-    `,
+    category: "rings",
+    description: `...`,
     reviews: []
   },
-
   {
     id: "MYRN-28461",
     name: "Eternal Swirl Gold Ring",
@@ -26,17 +19,10 @@ const productData = {
     image: "assets/img/20260106_082325_0002.png",
     tag: null,
     rating: 4,
-    description: `
-    <p>An elegant spiral-designed ring with smooth curves and a refined polished finish, perfect for casual chic styling.</p>
-    <ul>
-      <li>Soft swirl silhouette</li>
-      <li>Polished gold-tone surface</li>
-      <li>Lightweight daily accessory</li>
-    </ul>
-    `,
+    category: "rings",
+    description: `...`,
     reviews: []
   },
-
   {
     id: "MYRN-3688",
     name: "Golden Embrace Wrap Ring",
@@ -44,17 +30,10 @@ const productData = {
     image: "assets/img/product-3.jpg",
     tag: null,
     rating: 5,
-    description: `
-    <p>A stylish wrap-around ring featuring a smooth flowing design and elegant gold-tone finish.</p>
-    <ul>
-      <li>Modern wrap silhouette</li>
-      <li>High-shine plating</li>
-      <li>Perfect for everyday elegance</li>
-    </ul>
-    `,
+    category: "rings",
+    description: `...`,
     reviews: []
   },
-
   {
     id: "MYRN-9122",
     name: "Golden Embrace Luxe Edition Ring",
@@ -62,14 +41,8 @@ const productData = {
     image: "assets/img/product-4.jpg",
     tag: "Sale",
     rating: 4.5,
-    description: `
-    <p>A refined edition of the Golden Embrace ring featuring a bold finish and statement presence.</p>
-    <ul>
-      <li>Premium gold-tone polish</li>
-      <li>Elegant curved detailing</li>
-      <li>Ideal for evening styling</li>
-    </ul>
-    `,
+    category: "rings",
+    description: `...`,
     reviews: []
   }
 ],
@@ -82,17 +55,10 @@ newProducts: [
     image: "assets/img/new-product-1.jpg",
     tag: "New",
     rating: 3.5,
-    description: `
-    <p>Elegant gold-tone loop earrings with a clean circular silhouette, perfect for daily wear.</p>
-    <ul>
-      <li>Minimal hoop-inspired design</li>
-      <li>Lightweight comfort</li>
-      <li>Versatile styling piece</li>
-    </ul>
-    `,
+    category: "earrings",
+    description: `...`,
     reviews: []
   },
-
   {
     id: "NEW-2",
     name: "Blue Aurora Crystal Set",
@@ -100,17 +66,10 @@ newProducts: [
     image: "assets/img/new-product-2.jpg",
     tag: "New",
     rating: 4,
-    description: `
-    <p>A stunning crystal necklace and earrings set featuring radiant blue stones with a luxurious sparkle.</p>
-    <ul>
-      <li>Matching necklace & earrings</li>
-      <li>Premium crystal shine</li>
-      <li>Perfect for weddings & occasions</li>
-    </ul>
-    `,
+    category: "necklace",   // necklace set
+    description: `...`,
     reviews: []
   },
-
   {
     id: "NEW-3",
     name: "Timeless Heart Pendant",
@@ -118,17 +77,10 @@ newProducts: [
     image: "assets/img/new-product-3.jpg",
     tag: "New",
     rating: 5,
-    description: `
-    <p>A delicate heart-inspired pendant with a soft gold-tone finish, ideal for gifting.</p>
-    <ul>
-      <li>Romantic design</li>
-      <li>Elegant polish</li>
-      <li>Perfect everyday necklace</li>
-    </ul>
-    `,
+    category: "necklace",
+    description: `...`,
     reviews: []
   },
-
   {
     id: "NEW-4",
     name: "Eternal Swirl Modern Ring",
@@ -136,14 +88,8 @@ newProducts: [
     image: "assets/img/new-product-4.jpg",
     tag: "Sale",
     rating: 4.5,
-    description: `
-    <p>A modern take on the swirl design featuring bold curves and polished gold styling.</p>
-    <ul>
-      <li>Statement swirl pattern</li>
-      <li>Glossy gold finish</li>
-      <li>Comfort-fit design</li>
-    </ul>
-    `,
+    category: "rings",
+    description: `...`,
     reviews: []
   }
 ],
@@ -156,17 +102,10 @@ saleProducts: [
     image: "assets/img/sale-product-1.jpg",
     tag: "Sale",
     rating: 3.5,
-    description: `
-    <p>A geometric-inspired gold-tone ring with a bold contemporary structure.</p>
-    <ul>
-      <li>Modern architectural look</li>
-      <li>Durable plating</li>
-      <li>Comfortable fit</li>
-    </ul>
-    `,
+    category: "rings",
+    description: `...`,
     reviews: []
   },
-
   {
     id: "SALE-2",
     name: "Eternal Swirl Classic Ring",
@@ -174,17 +113,10 @@ saleProducts: [
     image: "assets/img/sale-product-2.jpg",
     tag: "Sale",
     rating: 4,
-    description: `
-    <p>A classic swirl-designed ring offering timeless elegance in a polished gold finish.</p>
-    <ul>
-      <li>Elegant spiral detail</li>
-      <li>Smooth finish</li>
-      <li>Daily wear accessory</li>
-    </ul>
-    `,
+    category: "rings",
+    description: `...`,
     reviews: []
   },
-
   {
     id: "SALE-3",
     name: "Eternal Swirl Premium Ring",
@@ -192,17 +124,10 @@ saleProducts: [
     image: "assets/img/product-3.jpg",
     tag: "Sale",
     rating: 5,
-    description: `
-    <p>An upgraded swirl edition featuring enhanced polish and refined shine.</p>
-    <ul>
-      <li>Luxury gloss finish</li>
-      <li>Elegant styling</li>
-      <li>Lightweight comfort</li>
-    </ul>
-    `,
+    category: "rings",
+    description: `...`,
     reviews: []
   },
-
   {
     id: "SALE-4",
     name: "Frosted Crown Crystal Ring",
@@ -210,19 +135,14 @@ saleProducts: [
     image: "assets/img/new-product-4.jpg",
     tag: "Sale",
     rating: 4.5,
-    description: `
-    <p>A crown-inspired crystal ring designed to add sparkle and glamour to evening looks.</p>
-    <ul>
-      <li>Crown silhouette</li>
-      <li>Crystal detailing</li>
-      <li>Perfect party accessory</li>
-    </ul>
-    `,
+    category: "rings",
+    description: `...`,
     reviews: []
   }
 ],
 
 products: [
+  //earings
   {
     id: "ER-01",
     name: "Sapphire Drop Earrings",
@@ -373,7 +293,148 @@ products: [
     </ul>
     `,
     reviews: []
-  }
+  },
+  {
+  id: "ER-10",
+  name: "Midnight Sapphire Dangle Earrings",
+  price: 72,
+  image: "assets/img/ear-rings/myara-er-07.jpg",
+  badge: "Elegant",
+  rating: 4.7,
+  category: "earrings",
+  description: `
+  <p>Graceful sapphire-toned dangle earrings designed for evening sophistication.</p>
+  <ul>
+    <li>Deep blue crystal drops</li>
+    <li>Gold-tone finish</li>
+    <li>Perfect for dinner & events</li>
+  </ul>
+  `,
+  reviews: []
+},
+{
+  id: "ER-11",
+  name: "Ocean Glow Crystal Drops",
+  price: 74,
+  image: "assets/img/ear-rings/myara-er-08.jpg",
+  badge: "Premium",
+  rating: 4.8,
+  category: "earrings",
+  description: `
+  <p>Vibrant ocean-blue crystal earrings that radiate charm and modern elegance.</p>
+  <ul>
+    <li>Bright aqua crystal tone</li>
+    <li>Delicate gold chain drop</li>
+    <li>Lightweight & comfortable</li>
+  </ul>
+  `,
+  reviews: []
+},{
+  id: "ER-12",
+  name: "Pearl Luxe Drop Earrings",
+  price: 58,
+  image: "assets/img/ear-rings/Mya-er7.png",
+  badge: "Classic",
+  rating: 4.5,
+  category: "earrings",
+  description: `
+  <p>Timeless pearl drop earrings with a refined gold setting.</p>
+  <ul>
+    <li>Elegant pearl finish</li>
+    <li>Minimal gold hook</li>
+    <li>Perfect for formal occasions</li>
+  </ul>
+  `,
+  reviews: []
+},{
+  id: "ER-13",
+  name: "Royal Gold Chandelier Earrings",
+  price: 92,
+  image: "assets/img/ear-rings/Mya-er8.png",
+  badge: "Statement",
+  rating: 4.8,
+  category: "earrings",
+  description: `
+  <p>Intricate chandelier earrings crafted with detailed gold patterns.</p>
+  <ul>
+    <li>Traditional royal design</li>
+    <li>Detailed filigree work</li>
+    <li>Ideal for weddings & festivals</li>
+  </ul>
+  `,
+  reviews: []
+},{
+  id: "ER-14",
+  name: "Minimal Gold Stud Hoops",
+  price: 36,
+  image: "assets/img/ear-rings/Mya-er9.png",
+  badge: "Daily Wear",
+  rating: 4.3,
+  category: "earrings",
+  description: `
+  <p>Chic and minimal gold stud hoops for effortless everyday styling.</p>
+  <ul>
+    <li>Sleek compact design</li>
+    <li>Lightweight comfort</li>
+    <li>Modern minimal look</li>
+  </ul>
+  `,
+  reviews: []
+},{
+  id: "ER-15",
+  name: "Emerald Square Drop Earrings",
+  price: 84,
+  image: "assets/img/ear-rings/Mya-er10.png",
+  badge: "Luxury",
+  rating: 4.9,
+  category: "earrings",
+  description: `
+  <p>Bold emerald square earrings set in polished gold plating.</p>
+  <ul>
+    <li>Rich green gemstone look</li>
+    <li>Geometric square design</li>
+    <li>High-gloss finish</li>
+  </ul>
+  `,
+  reviews: []
+},{
+  id: "ER-16",
+  name: "Golden Curve Mini Hoops",
+  price: 42,
+  image: "assets/img/ear-rings/Mya-er11.png",
+  badge: "Trending",
+  rating: 4.4,
+  category: "earrings",
+  description: `
+  <p>Modern curved mini hoop earrings with a polished gold shine.</p>
+  <ul>
+    <li>Smooth rounded finish</li>
+    <li>Everyday essential</li>
+    <li>Subtle luxury touch</li>
+  </ul>
+  `,
+  reviews: []
+},{
+  id: "ER-17",
+  name: "Rose Gold Teardrop Sparkle Earrings",
+  price: 76,
+  image: "assets/img/ear-rings/Mya-er12.png",
+  badge: "Romantic",
+  rating: 4.6,
+  category: "earrings",
+  description: `
+  <p>Soft rose-gold teardrop earrings with shimmering crystal detailing.</p>
+  <ul>
+    <li>Elegant teardrop shape</li>
+    <li>Warm rose-gold tone</li>
+    <li>Perfect for date nights</li>
+  </ul>
+  `,
+  reviews: []
+}
+
+//necklaces
+
 ]
 
 };
