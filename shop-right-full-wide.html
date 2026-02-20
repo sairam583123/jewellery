@@ -957,22 +957,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const categoryList = document.getElementById("category-list");
   categoryList.innerHTML = "";
 
-  const categories = ["earrings", "necklace", "rings", "bracelets"];
 
-  categories.forEach(cat => {
-    const count = allProducts.filter(p => p.category === cat).length;
 
-    if (count > 0) {
-      const li = document.createElement("li");
-      li.innerHTML = `
-        <a href="?category=${cat}">
-          ${cat.charAt(0).toUpperCase() + cat.slice(1)} (${count})
-        </a>
-      `;
-      categoryList.appendChild(li);
-    }
-  });
 
+const categories = [...new Set(allProducts.map(p => p.category))];
+
+categories.forEach(cat => {
+  const count = allProducts.filter(p => p.category === cat).length;
+
+  const li = document.createElement("li");
+  li.innerHTML = `
+    <a href="?category=${cat}">
+      ${cat.charAt(0).toUpperCase() + cat.slice(1)} (${count})
+    </a>
+  `;
+  categoryList.appendChild(li);
+});
   /* =============================
      PRICE RANGE DYNAMIC (AED)
   ============================== */
