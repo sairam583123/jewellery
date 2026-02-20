@@ -431,9 +431,179 @@ products: [
   </ul>
   `,
   reviews: []
-}
+},
 
-//necklaces
+// necklaces
+
+{
+  id: "NC-01",
+  name: "Golden Aura Drop Pendant",
+  price: 88,
+  image: "assets/img/necklace/Mya-nc5.jpg",
+  badge: "Elegant",
+  rating: 4.7,
+  category: "necklace",
+  description: `
+  <p>Refined gold pendant necklace featuring a graceful teardrop design with a polished finish.</p>
+  <ul>
+    <li>Classic drop pendant style</li>
+    <li>High-shine gold plating</li>
+    <li>Perfect for formal & evening wear</li>
+  </ul>
+  `,
+  reviews: []
+},
+
+{
+  id: "NC-02",
+  name: "Midnight Clover Crystal Necklace",
+  price: 72,
+  image: "assets/img/necklace/Mya-nc6.jpg",
+  badge: "Trending",
+  rating: 4.6,
+  category: "necklace",
+  description: `
+  <p>Delicate clover-shaped pendant with soft blue crystal accents on a fine gold chain.</p>
+  <ul>
+    <li>Floral clover centerpiece</li>
+    <li>Subtle crystal sparkle</li>
+    <li>Lightweight everyday elegance</li>
+  </ul>
+  `,
+  reviews: []
+},
+
+{
+  id: "NC-03",
+  name: "Minimal Gold Charm Necklace",
+  price: 64,
+  image: "assets/img/necklace/Mya-nc7.jpg",
+  badge: "Daily Wear",
+  rating: 4.5,
+  category: "necklace",
+  description: `
+  <p>Sleek and minimal gold chain necklace with a petite charm detail.</p>
+  <ul>
+    <li>Modern minimalist design</li>
+    <li>Lightweight gold chain</li>
+    <li>Perfect for layering</li>
+  </ul>
+  `,
+  reviews: []
+},
+
+{
+  id: "NC-04",
+  name: "Royal Heritage Gold Pendant",
+  price: 109,
+  image: "assets/img/necklace/Mya-nc8.jpg",
+  badge: "Premium",
+  rating: 4.8,
+  category: "necklace",
+  description: `
+  <p>Traditional gold pendant necklace inspired by timeless royal craftsmanship.</p>
+  <ul>
+    <li>Intricate pendant detailing</li>
+    <li>Rich gold-tone finish</li>
+    <li>Ideal for weddings & celebrations</li>
+  </ul>
+  `,
+  reviews: []
+},
+
+{
+  id: "NC-05",
+  name: "Sunlit Grace Pendant Necklace",
+  price: 95,
+  image: "assets/img/necklace/Mya-nc9.jpg",
+  badge: "Luxury",
+  rating: 4.9,
+  category: "necklace",
+  description: `
+  <p>Elegant gold pendant necklace with a radiant drop design and smooth polished finish.</p>
+  <ul>
+    <li>Refined drop silhouette</li>
+    <li>Glossy gold plating</li>
+    <li>Perfect statement for special occasions</li>
+  </ul>
+  `,
+  reviews: []
+},
+{
+  id: "NC-06",
+  name: "Delicate Glow Solitaire Necklace",
+  price: 68,
+  image: "assets/img/necklace/Mya-nc1.jpg",
+  badge: "Minimal",
+  rating: 4.5,
+  category: "necklace",
+  description: `
+  <p>Elegant solitaire pendant necklace with a subtle crystal centerpiece for refined everyday beauty.</p>
+  <ul>
+    <li>Single crystal drop pendant</li>
+    <li>Fine lightweight gold chain</li>
+    <li>Perfect for daily & office wear</li>
+  </ul>
+  `,
+  reviews: []
+},
+
+{
+  id: "NC-07",
+  name: "Golden Whisper Layered Necklace",
+  price: 82,
+  image: "assets/img/necklace/Mya-nc2.jpg",
+  badge: "Trending",
+  rating: 4.6,
+  category: "necklace",
+  description: `
+  <p>Modern layered gold necklace designed to add effortless elegance to any outfit.</p>
+  <ul>
+    <li>Chic double-layer style</li>
+    <li>Polished gold-tone finish</li>
+    <li>Perfect for casual & semi-formal looks</li>
+  </ul>
+  `,
+  reviews: []
+},
+
+{
+  id: "NC-08",
+  name: "Petite Charm Gold Necklace",
+  price: 59,
+  image: "assets/img/necklace/Mya-nc3.jpg",
+  badge: "Daily Wear",
+  rating: 4.4,
+  category: "necklace",
+  description: `
+  <p>Minimal gold necklace featuring a petite charm pendant for subtle sophistication.</p>
+  <ul>
+    <li>Compact charm centerpiece</li>
+    <li>Lightweight comfortable chain</li>
+    <li>Great for layering styles</li>
+  </ul>
+  `,
+  reviews: []
+},
+
+{
+  id: "NC-09",
+  name: "Radiant Teardrop Crystal Necklace",
+  price: 91,
+  image: "assets/img/necklace/Mya-nc4.jpg",
+  badge: "Elegant",
+  rating: 4.7,
+  category: "necklace",
+  description: `
+  <p>Graceful teardrop crystal pendant necklace with a refined gold setting.</p>
+  <ul>
+    <li>Classic teardrop silhouette</li>
+    <li>High-shine crystal accent</li>
+    <li>Ideal for parties & special occasions</li>
+  </ul>
+  `,
+  reviews: []
+}
 
 ]
 
