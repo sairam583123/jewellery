@@ -9,8 +9,16 @@ featuredProducts: [
     tag: "New",
     rating: 4.5,
     category: "rings",
-    description: `...`,
-    reviews: []
+    description: `<p>Elegant T-bar statement ring crafted in premium gold plating. A bold yet refined piece perfect for modern styling.</p>
+    <ul>
+      <li>24K gold plating</li>
+      <li>Minimal T-bar design</li>
+      <li>Perfect for statement looks</li>
+    </ul>`,
+    reviews: [
+      { name: "Aarav", comment: "Looks premium and stylish. Loved the design!", rating: 5 },
+      { name: "Sneha", comment: "Very unique ring, perfect for outfits.", rating: 4 }
+    ]
   },
   {
     id: "MYRN-28461",
@@ -20,8 +28,16 @@ featuredProducts: [
     tag: null,
     rating: 4,
     category: "rings",
-    description: `...`,
-    reviews: []
+    description: `<p>Graceful swirl-designed gold ring that adds a touch of timeless elegance to your everyday style.</p>
+    <ul>
+      <li>Unique swirl pattern</li>
+      <li>Polished gold finish</li>
+      <li>Lightweight comfort wear</li>
+    </ul>`,
+    reviews: [
+      { name: "Priya", comment: "Simple and elegant, goes with everything.", rating: 4 },
+      { name: "Rahul", comment: "Nice design but slightly loose fit.", rating: 4 }
+    ]
   },
   {
     id: "MYRN-3688",
@@ -31,8 +47,16 @@ featuredProducts: [
     tag: null,
     rating: 5,
     category: "rings",
-    description: `...`,
-    reviews: []
+    description: `<p>Modern wrap-style ring designed to beautifully hug your finger with a sleek golden touch.</p>
+    <ul>
+      <li>Open wrap design</li>
+      <li>Smooth gold polish</li>
+      <li>Trendy minimalist look</li>
+    </ul>`,
+    reviews: [
+      { name: "Kiran", comment: "Perfect fit and very trendy!", rating: 5 },
+      { name: "Divya", comment: "Absolutely loved the design and finish.", rating: 5 }
+    ]
   },
   {
     id: "MYRN-9122",
@@ -42,8 +66,16 @@ featuredProducts: [
     tag: "Sale",
     rating: 4.5,
     category: "rings",
-    description: `...`,
-    reviews: []
+    description: `<p>Luxe edition wrap ring crafted with a premium finish, offering bold elegance for special occasions.</p>
+    <ul>
+      <li>Premium gold plating</li>
+      <li>Enhanced wrap design</li>
+      <li>Perfect for parties & events</li>
+    </ul>`,
+    reviews: [
+      { name: "Megha", comment: "Looks luxurious and classy.", rating: 5 },
+      { name: "Ankit", comment: "Good quality, worth the price.", rating: 4 }
+    ]
   }
 ],
 
@@ -56,8 +88,16 @@ newProducts: [
     tag: "New",
     rating: 3.5,
     category: "earrings",
-    description: `...`,
-    reviews: []
+    description: `<p>Elegant gold loop earrings inspired by modern Dubai fashion, perfect for effortless daily styling.</p>
+    <ul>
+      <li>Sleek loop design</li>
+      <li>Lightweight comfort</li>
+      <li>Everyday elegance</li>
+    </ul>`,
+    reviews: [
+      { name: "Aisha", comment: "Very classy and lightweight, perfect for daily wear.", rating: 4 },
+      { name: "Fatima", comment: "Simple yet elegant, loved the finish.", rating: 3 }
+    ]
   },
   {
     id: "NEW-2",
@@ -66,9 +106,17 @@ newProducts: [
     image: "assets/img/new-product-2.jpg",
     tag: "New",
     rating: 4,
-    category: "necklace",   // necklace set
-    description: `...`,
-    reviews: []
+    category: "necklace",
+    description: `<p>Luxurious crystal necklace set inspired by Dubai night skies, featuring radiant blue tones and premium shine.</p>
+    <ul>
+      <li>Vibrant blue crystals</li>
+      <li>Matching set design</li>
+      <li>Perfect for special occasions</li>
+    </ul>`,
+    reviews: [
+      { name: "Layla", comment: "Looks so luxurious, perfect for parties!", rating: 5 },
+      { name: "Zain", comment: "Great shine and quality, worth it.", rating: 4 }
+    ]
   },
   {
     id: "NEW-3",
@@ -78,8 +126,16 @@ newProducts: [
     tag: "New",
     rating: 5,
     category: "necklace",
-    description: `...`,
-    reviews: []
+    description: `<p>Elegant heart pendant necklace symbolizing love and grace, inspired by timeless Middle Eastern elegance.</p>
+    <ul>
+      <li>Heart-shaped pendant</li>
+      <li>Minimal gold chain</li>
+      <li>Perfect gifting piece</li>
+    </ul>`,
+    reviews: [
+      { name: "Noor", comment: "Beautiful and meaningful design, loved it!", rating: 5 },
+      { name: "Yasmin", comment: "Perfect gift, looks very premium.", rating: 5 }
+    ]
   },
   {
     id: "NEW-4",
@@ -89,8 +145,16 @@ newProducts: [
     tag: "Sale",
     rating: 4.5,
     category: "rings",
-    description: `...`,
-    reviews: []
+    description: `<p>Modern swirl ring inspired by contemporary Dubai trends, offering a sleek and stylish look.</p>
+    <ul>
+      <li>Contemporary swirl design</li>
+      <li>Glossy gold finish</li>
+      <li>Perfect everyday accessory</li>
+    </ul>`,
+    reviews: [
+      { name: "Omar", comment: "Stylish and comfortable, great daily ring.", rating: 4 },
+      { name: "Khalid", comment: "Good quality and design, satisfied.", rating: 5 }
+    ]
   }
 ],
 
@@ -103,8 +167,16 @@ saleProducts: [
     tag: "Sale",
     rating: 3.5,
     category: "rings",
-    description: `...`,
-    reviews: []
+    description: `<p>Modern architectural ring designed with bold structure and clean lines for a unique statement look.</p>
+    <ul>
+      <li>Geometric design</li>
+      <li>Matte gold finish</li>
+      <li>Perfect for modern styling</li>
+    </ul>`,
+    reviews: [
+      { name: "Omar", comment: "Very unique design, stands out nicely.", rating: 4 },
+      { name: "Zaid", comment: "Good style but slightly bold for daily wear.", rating: 3 }
+    ]
   },
   {
     id: "SALE-2",
@@ -114,8 +186,16 @@ saleProducts: [
     tag: "Sale",
     rating: 4,
     category: "rings",
-    description: `...`,
-    reviews: []
+    description: `<p>Timeless swirl ring crafted with a smooth gold finish, perfect for adding subtle elegance to any outfit.</p>
+    <ul>
+      <li>Classic swirl pattern</li>
+      <li>Polished gold shine</li>
+      <li>Comfortable everyday wear</li>
+    </ul>`,
+    reviews: [
+      { name: "Aisha", comment: "Simple and elegant, I wear it daily.", rating: 4 },
+      { name: "Noor", comment: "Beautiful design and very comfortable.", rating: 4 }
+    ]
   },
   {
     id: "SALE-3",
@@ -125,8 +205,16 @@ saleProducts: [
     tag: "Sale",
     rating: 5,
     category: "rings",
-    description: `...`,
-    reviews: []
+    description: `<p>Premium swirl ring featuring enhanced shine and refined craftsmanship for a luxurious feel.</p>
+    <ul>
+      <li>High-quality gold plating</li>
+      <li>Premium swirl design</li>
+      <li>Elegant statement piece</li>
+    </ul>`,
+    reviews: [
+      { name: "Khalid", comment: "Excellent quality, feels premium.", rating: 5 },
+      { name: "Fatima", comment: "Loved the shine and finish!", rating: 5 }
+    ]
   },
   {
     id: "SALE-4",
@@ -136,11 +224,18 @@ saleProducts: [
     tag: "Sale",
     rating: 4.5,
     category: "rings",
-    description: `...`,
-    reviews: []
+    description: `<p>Elegant crown-inspired ring adorned with sparkling crystals, designed to give a royal and luxurious touch.</p>
+    <ul>
+      <li>Crown-style design</li>
+      <li>Crystal embellishments</li>
+      <li>Perfect for special occasions</li>
+    </ul>`,
+    reviews: [
+      { name: "Yasmin", comment: "Looks royal and very beautiful.", rating: 5 },
+      { name: "Layla", comment: "Great sparkle and elegant design.", rating: 4 }
+    ]
   }
 ],
-
 products: [
   //earings
   {
@@ -159,7 +254,10 @@ products: [
       <li>Perfect occasion wear</li>
     </ul>
     `,
-    reviews: []
+  reviews: [
+  { name: "Aisha", comment: "Very elegant and perfect for evening wear.", rating: 5 },
+  { name: "Zara", comment: "Loved the shine and design.", rating: 4 }
+]
   },
 
   {
@@ -178,7 +276,10 @@ products: [
       <li>Classic red crystal tone</li>
     </ul>
     `,
-    reviews: []
+   reviews: [
+  { name: "Layla", comment: "Cute and lightweight, great for daily use.", rating: 4 },
+  { name: "Noor", comment: "Beautiful color and finish.", rating: 5 }
+]
   },
 
   {
@@ -197,7 +298,10 @@ products: [
       <li>Comfortable all-day wear</li>
     </ul>
     `,
-    reviews: []
+   reviews: [
+  { name: "Fatima", comment: "Simple yet stylish, matches all outfits.", rating: 4 },
+  { name: "Hana", comment: "Good quality for the price.", rating: 4 }
+]
   },
 
   {
@@ -216,7 +320,10 @@ products: [
       <li>Wedding & party ready</li>
     </ul>
     `,
-    reviews: []
+    reviews: [
+  { name: "Shazia", comment: "Very royal and traditional.", rating: 5 },
+  { name: "Hiba", comment: "Perfect for weddings.", rating: 5 }
+]
   },
 
   {
@@ -235,7 +342,10 @@ products: [
       <li>Perfect for celebrations</li>
     </ul>
     `,
-    reviews: []
+  reviews: [
+  { name: "Bushra", comment: "Minimal and stylish.", rating: 4 },
+  { name: "Nawal", comment: "Great for layering.", rating: 4 }
+]
   },
 
   {
@@ -254,7 +364,10 @@ products: [
       <li>Luxury-inspired look</li>
     </ul>
     `,
-    reviews: []
+   reviews: [
+  { name: "Aaliyah", comment: "Very elegant pendant.", rating: 5 },
+  { name: "Sana", comment: "Looks premium and classy.", rating: 4 }
+]
   },
 
   {
@@ -273,7 +386,10 @@ products: [
       <li>Ideal festive accessory</li>
     </ul>
     `,
-    reviews: []
+   reviews: [
+  { name: "Rasha", comment: "Simple and perfect daily wear.", rating: 4 },
+  { name: "Yara", comment: "Very lightweight and comfy.", rating: 4 }
+]
   },
 
   {
@@ -292,7 +408,10 @@ products: [
       <li>Perfect evening styling</li>
     </ul>
     `,
-    reviews: []
+  reviews: [
+  { name: "Lina", comment: "Classic and elegant design.", rating: 5 },
+  { name: "Sara", comment: "Perfect for formal occasions.", rating: 4 }
+]
   },
   {
   id: "ER-10",
@@ -310,7 +429,10 @@ products: [
     <li>Perfect for dinner & events</li>
   </ul>
   `,
-  reviews: []
+ reviews: [
+  { name: "Huda", comment: "Minimal and classy.", rating: 4 },
+  { name: "Mariam", comment: "Nice sparkle for evening wear.", rating: 5 }
+]
 },
 {
   id: "ER-11",
@@ -612,5 +734,6 @@ products: [
 const shopProducts = [
   ...productData.featuredProducts,
   ...productData.newProducts,
-  ...productData.saleProducts
+  ...productData.saleProducts,
+    ...(productData.products || []) 
 ];
