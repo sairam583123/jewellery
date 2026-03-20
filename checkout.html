@@ -234,62 +234,17 @@
                                 </dl>
                             </div>
                         </li> -->
-                        <li class="shop-cart"><a href="#"><i class="fa fa-shopping-bag"></i> <span
-                                class="count">3</span></a>
-                            <div class="mini-cart">
-                                <div class="mini-cart-body">
-                                    <div class="single-cart-item d-flex">
-                                        <figure class="product-thumb">
-                                            <a href="#"><img class="img-fluid" src="assets/img/product-1.jpg"
-                                                             alt="Products"/></a>
-                                        </figure>
-
-                                        <div class="product-details">
-                                            <h2><a href="#">Sprite Yoga Companion</a></h2>
-                                            <div class="cal d-flex align-items-center">
-                                                <span class="quantity">3</span>
-                                                <span class="multiplication">X</span>
-                                                <span class="price">$77.00</span>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="remove-icon"><i class="fa fa-trash-o"></i></a>
-                                    </div>
-                                    <div class="single-cart-item d-flex">
-                                        <figure class="product-thumb">
-                                            <a href="#"><img class="img-fluid" src="assets/img/product-2.jpg"
-                                                             alt="Products"/></a>
-                                        </figure>
-                                        <div class="product-details">
-                                            <h2><a href="#">Yoga Companion Kit</a></h2>
-                                            <div class="cal d-flex align-items-center">
-                                                <span class="quantity">2</span>
-                                                <span class="multiplication">X</span>
-                                                <span class="price">$6.00</span>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="remove-icon"><i class="fa fa-trash-o"></i></a>
-                                    </div>
-                                    <div class="single-cart-item d-flex">
-                                        <figure class="product-thumb">
-                                            <a href="#"><img class="img-fluid" src="assets/img/product-3.jpg"
-                                                             alt="Products"/></a>
-                                        </figure>
-                                        <div class="product-details">
-                                            <h2><a href="#">Sprite Yoga Companion Kit</a></h2>
-                                            <div class="cal d-flex align-items-center">
-                                                <span class="quantity">1</span>
-                                                <span class="multiplication">X</span>
-                                                <span class="price">$116.00</span>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="remove-icon"><i class="fa fa-trash-o"></i></a>
-                                    </div>
-                                </div>
-                                <div class="mini-cart-footer">
-                                    <a href="checkout.html" class="btn-add-to-cart">Checkout</a>
-                                </div>
-                            </div>
-                        </li>
+                       <li class="shop-cart">
+  <a href="#"><i class="fa fa-shopping-bag"></i>
+    <span class="count" id="cart-count">0</span></a>
+  <div class="mini-cart">
+    <div class="mini-cart-body" id="mini-cart-body">
+    </div>
+    <div class="mini-cart-footer">
+      <a href="checkout.html" class="btn-add-to-cart">Checkout</a>
+    </div>
+  </div>
+</li>
                     </ul>
                 </div>
             </div>
@@ -447,13 +402,14 @@
                             <div class="single-input-item">
                                 <label for="country" class="required">Country</label>
                                 <select name="country" id="country">
-                                    <option value="Bangladesh">Bangladesh</option>
-                                    <option value="India">India</option>
-                                    <option value="Pakistan">Pakistan</option>
-                                    <option value="England">England</option>
-                                    <option value="London">London</option>
-                                    <option value="London">London</option>
-                                    <option value="Chaina">Chaina</option>
+                                  <option value="UAE">United Arab Emirates</option>
+<option value="India">India</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="UK">United Kingdom</option>
+<option value="China">China</option>
+<option value="USA">United States</option>
                                 </select>
                             </div>
 
@@ -602,21 +558,12 @@
                                 </tr>
                                 </thead>
 
-                                <tbody>
-                                <tr>
-                                    <td><a href="single-product.html">Suscipit Vestibulum <strong> × 1</strong></a></td>
-                                    <td>$165.00</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="single-product.html">Ami Vestibulum suscipit <strong> × 4</strong></a>
-                                    </td>
-                                    <td>$165.00</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="single-product.html">Vestibulum suscipit <strong> × 2</strong></a></td>
-                                    <td>$165.00</td>
-                                </tr>
-                                </tbody>
+                                <tbody id="checkout-order-body">
+  <tr><td colspan="2" style="text-align:center;padding:15px;">
+    Your cart is empty. <a href="shop.html">Continue shopping</a>
+  </td></tr>
+</tbody>
+
                                 <tfoot>
                                 <tr>
                                     <td>Sub Total</td>
@@ -694,8 +641,8 @@
                                     </div>
                                 </div>
                                 <div class="payment-method-details" data-method="check">
-                                    <p>Please send a check to Store Name, Store Street, Store Town, Store State /
-                                        County, Store Postcode.</p>
+                                   <p>For queries about your order, contact us at 
+<a href="mailto:hrsupport@myarajewelry.shop">hrsupport@myarajewelry.shop</a></p>
                                 </div>
                             </div>
 
@@ -722,6 +669,17 @@
                                         <a
                                                 href="index.html">terms and conditions.</a></label>
                                 </div>
+                                <div style="text-align:center;margin-bottom:12px;">
+  <p style="font-size:11px;color:#999;margin-bottom:8px;">SECURE PAYMENT</p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px;">
+    <span style="padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:10px;font-weight:700;color:#1A1F71;">VISA</span>
+    <span style="padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:10px;font-weight:700;color:#003087;">PayPal</span>
+    <span style="padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:10px;font-weight:700;color:#252525;">AMEX</span>
+    <span style="padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:10px;color:#444;">Mastercard</span>
+    <span style="padding:4px 10px;border:1px solid #ddd;border-radius:4px;background:#fff;font-size:10px;color:#2e7d32;">&#128274; SSL Secure</span>
+  </div>
+</div>
+<a href="#" class="btn-add-to-cart"> Place Order</a>
 
                                 <a href="#" class="btn-add-to-cart"> Place Order</a>
                             </div>
@@ -796,6 +754,37 @@ document.getElementById("mobile-menu-toggle").addEventListener("click", function
   const menu = document.getElementById("mobile-menu");
   menu.style.display = menu.style.display === "block" ? "none" : "block";
 });
+</script>
+
+<script>
+  function renderMiniCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartBody = document.getElementById("mini-cart-body");
+    const cartCount = document.getElementById("cart-count");
+    cartBody.innerHTML = "";
+    let totalItems = 0;
+    if (cart.length === 0) {
+      cartBody.innerHTML = "<p style='padding:15px'>Cart is empty</p>";
+      cartCount.innerText = 0;
+      return;
+    }
+    cart.forEach((item, index) => {
+      totalItems += item.quantity;
+      cartBody.innerHTML += `
+        <div class="single-cart-item d-flex">
+          <div class="product-details">
+            <h2><a href="#">${item.name}</a></h2>
+            <div class="cal d-flex align-items-center">
+              <span class="quantity">${item.quantity}</span>
+              <span class="multiplication">X</span>
+              <span class="price">${item.price} AED</span>
+            </div>
+          </div>
+        </div>`;
+    });
+    cartCount.innerText = totalItems;
+  }
+  document.addEventListener("DOMContentLoaded", renderMiniCart);
 </script>
 </body>
 
