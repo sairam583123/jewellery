@@ -38,221 +38,8 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="assets/js/products.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const params = new URLSearchParams(window.location.search);
-  const productId = params.get("id");
-  if (!productId) return;
-
-  const allProducts = [
-    ...(productData.featuredProducts || []),
-    ...(productData.newProducts || []),
-    ...(productData.saleProducts || []),
-    ...(productData.carouselProducts || []),
-    ...(productData.products || [])
-  ];
-
-  const product = allProducts.find(p => p.id === productId);
-
-  if (!product) {
-    const nameEl = document.getElementById("product-name");
-    if (nameEl) nameEl.innerText = "Product Not Found";
-    return;
-  }
-
-  // =============================
-  // BASIC INFO
-  // =============================
-
-  document.title = product.name + " | Myara Jewellery";
-
-  const breadcrumb = document.getElementById("breadcrumb-product-name");
-  if (breadcrumb) breadcrumb.textContent = product.name;
-
-  const nameEl = document.getElementById("product-name");
-  if (nameEl) nameEl.innerText = product.name;
-
-  const priceEl = document.getElementById("product-price");
-  if (priceEl) priceEl.innerText = product.price + " AED";
-
-  const skuEl = document.getElementById("product-sku");
-  if (skuEl) skuEl.innerText = product.id;
-
-  const descEl = document.getElementById("product-description");
-  if (descEl)
-    descEl.innerHTML =
-      product.description || "<p>Luxury handcrafted piece from Myara Jewellery.</p>";
-
-  // =============================
-  // IMAGE CAROUSEL
-  // =============================
-
-  const imageContainer = document.getElementById("product-image-carousel");
-
-  if (imageContainer) {
-    imageContainer.innerHTML = `
-      <div class="single-thumb-item">
-        <img class="img-fluid" src="${product.image}" alt="${product.name}">
-      </div>
-    `;
-
-    if (!$(imageContainer).hasClass("owl-loaded")) {
-      $("#product-image-carousel").owlCarousel({
-        items: 1,
-        loop: true,
-        nav: true,
-        dots: false
-      });
-    }
-  }
-
-  // =============================
-  // LONG DESCRIPTION TAB
-  // =============================
-
-  const longDescContainer = document.getElementById("product-long-description");
-  if (longDescContainer) {
-    longDescContainer.innerHTML =
-      product.description || "<p>No description available.</p>";
-  }
-
-  // =============================
-  // REVIEWS
-  // =============================
-
-  const reviewList = document.getElementById("review-list");
-  const reviewSummary = document.getElementById("review-summary");
-
-  if (reviewList && reviewSummary) {
-
-    reviewList.innerHTML = "";
-
-    if (product.reviews && product.reviews.length > 0) {
-
-      let total = 0;
-
-      product.reviews.forEach(review => {
-        total += review.rating;
-
-        reviewList.innerHTML += `
-          <div class="sin-rattings">
-            <div class="ratting-author">
-              <h3>${review.name}</h3>
-              <div class="ratting-star">
-                ${renderStars(review.rating)}
-              </div>
-            </div>
-            <p>${review.comment}</p>
-          </div>
-        `;
-      });
-
-      const avg = (total / product.reviews.length).toFixed(1);
-
-      reviewSummary.innerHTML = `
-        <div class="pro-avg-ratting">
-          <h4>${avg} <span>(Overall)</span></h4>
-          <span>Based on ${product.reviews.length} Reviews</span>
-        </div>
-      `;
-
-    } else {
-      reviewSummary.innerHTML = "<p>No reviews yet.</p>";
-    }
-  }
-
-  // =============================
-  // ADD TO CART
-  // =============================
-
-  const addToCartBtn = document.getElementById("add-to-cart-btn");
-  if (addToCartBtn) {
-    addToCartBtn.addEventListener("click", function () {
-
-      let qty = parseInt(document.getElementById("qty")?.value) || 1;
-      if (qty < 1) qty = 1;
-
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const existing = cart.find(item => item.id === product.id);
-
-      if (existing) {
-        existing.qty += qty;
-      } else {
-        cart.push({
-          id: product.id,
-          name: product.name,
-          price: product.price,
-          image: product.image,
-          qty: qty
-        });
-      }
-
-      localStorage.setItem("cart", JSON.stringify(cart));
-      alert("Added to cart successfully!");
-    });
-  }
-
-  // =============================
-  // WISHLIST
-  // =============================
-
-  const wishlistBtn = document.getElementById("add-to-wishlist");
-  if (wishlistBtn) {
-    wishlistBtn.addEventListener("click", function () {
-
-      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-      if (!wishlist.find(item => item.id === product.id)) {
-        wishlist.push(product);
-        localStorage.setItem("wishlist", JSON.stringify(wishlist));
-        alert("Added to wishlist!");
-      } else {
-        alert("Already in wishlist!");
-      }
-    });
-  }
-
-  // =============================
-  // COMPARE
-  // =============================
-
-  const compareBtn = document.getElementById("add-to-compare");
-  if (compareBtn) {
-    compareBtn.addEventListener("click", function () {
-
-      let compare = JSON.parse(localStorage.getItem("compare")) || [];
-
-      if (!compare.find(item => item.id === product.id)) {
-        compare.push(product);
-        localStorage.setItem("compare", JSON.stringify(compare));
-        alert("Added to compare!");
-      } else {
-        alert("Already in compare list!");
-      }
-    });
-  }
-
-});
 
 
-// =============================
-// STAR RENDER FUNCTION
-// =============================
-function renderStars(rating) {
-  const full = Math.floor(rating);
-  const half = rating % 1 >= 0.5 ? 1 : 0;
-  const empty = 5 - full - half;
-
-  return (
-    "<i class='fa fa-star'></i>".repeat(full) +
-    (half ? "<i class='fa fa-star-half-o'></i>" : "") +
-    "<i class='fa fa-star-o'></i>".repeat(empty)
-  );
-}
-</script>
 
 
 
@@ -323,62 +110,16 @@ function renderStars(rating) {
                                 </dl>
                             </div>
                         </li>
-                        <li class="shop-cart"><a href="#"><i class="fa fa-shopping-bag"></i> <span
-                                class="count">3</span></a>
-                            <div class="mini-cart">
-                                <div class="mini-cart-body">
-                                    <div class="single-cart-item d-flex">
-                                        <figure class="product-thumb">
-                                            <a href="#"><img class="img-fluid" src="assets/img/product-1.jpg"
-                                                             alt="Products"/></a>
-                                        </figure>
-
-                                        <div class="product-details">
-                                            <h2><a href="#">Sprite Yoga Companion</a></h2>
-                                            <div class="cal d-flex align-items-center">
-                                                <span class="quantity">3</span>
-                                                <span class="multiplication">X</span>
-                                                <span class="price">$77.00</span>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="remove-icon"><i class="fa fa-trash-o"></i></a>
-                                    </div>
-                                    <div class="single-cart-item d-flex">
-                                        <figure class="product-thumb">
-                                            <a href="#"><img class="img-fluid" src="assets/img/product-2.jpg"
-                                                             alt="Products"/></a>
-                                        </figure>
-                                        <div class="product-details">
-                                            <h2><a href="#">Yoga Companion Kit</a></h2>
-                                            <div class="cal d-flex align-items-center">
-                                                <span class="quantity">2</span>
-                                                <span class="multiplication">X</span>
-                                                <span class="price">$6.00</span>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="remove-icon"><i class="fa fa-trash-o"></i></a>
-                                    </div>
-                                    <div class="single-cart-item d-flex">
-                                        <figure class="product-thumb">
-                                            <a href="#"><img class="img-fluid" src="assets/img/product-3.jpg"
-                                                             alt="Products"/></a>
-                                        </figure>
-                                        <div class="product-details">
-                                            <h2><a href="#">Sprite Yoga Companion Kit</a></h2>
-                                            <div class="cal d-flex align-items-center">
-                                                <span class="quantity">1</span>
-                                                <span class="multiplication">X</span>
-                                                <span class="price">$116.00</span>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="remove-icon"><i class="fa fa-trash-o"></i></a>
-                                    </div>
-                                </div>
-                                <div class="mini-cart-footer">
-                                    <a href="checkout.html" class="btn-add-to-cart">Checkout</a>
-                                </div>
-                            </div>
-                        </li>
+                       <li class="shop-cart">
+  <a href="#"><i class="fa fa-shopping-bag"></i>
+    <span class="count" id="cart-count">0</span></a>
+  <div class="mini-cart">
+    <div class="mini-cart-body" id="mini-cart-body"></div>
+    <div class="mini-cart-footer">
+      <a href="checkout.html" class="btn-add-to-cart">Checkout</a>
+    </div>
+  </div>
+</li>
                     </ul>
                 </div>
             </div>
@@ -435,37 +176,8 @@ function renderStars(rating) {
                         <!-- Product Thumbnail Start -->
                         <div class="col-lg-5">
                             <div class="product-thumbnail-wrap">
-                                <div class="product-thumb-carousel owl-carousel" id="product-image-carousel">
-                                    <div class="single-thumb-item">
-                                        <a href="single-product.html"><img class="img-fluid"
-                                                                           src="assets/img/single-pro-thumb.jpg"
-                                                                           alt="Product"/></a>
-                                    </div>
-
-                                    <div class="single-thumb-item">
-                                        <a href="single-product.html"><img class="img-fluid"
-                                                                           src="assets/img/single-pro-thumb-2.jpg"
-                                                                           alt="Product"/></a>
-                                    </div>
-
-                                    <div class="single-thumb-item">
-                                        <a href="single-product.html"><img class="img-fluid"
-                                                                           src="assets/img/single-pro-thumb-3.jpg"
-                                                                           alt="Product"/></a>
-                                    </div>
-
-                                    <div class="single-thumb-item">
-                                        <a href="single-product.html"><img class="img-fluid"
-                                                                           src="assets/img/single-pro-thumb-4.jpg"
-                                                                           alt="Product"/></a>
-                                    </div>
-
-                                    <div class="single-thumb-item">
-                                        <a href="single-product.html"><img class="img-fluid"
-                                                                           src="assets/img/single-pro-thumb-5.jpg"
-                                                                           alt="Product"/></a>
-                                    </div>
-                                </div>
+                              <div class="product-thumb-carousel owl-carousel" id="product-image-carousel">
+</div>
                             </div>
                         </div>
                         <!-- Product Thumbnail End -->
@@ -669,11 +381,12 @@ function renderStars(rating) {
                   <p>Luxury You Can Trust, Beauty You Can Wear.</p>
 
                   <div class="footer-social-icons">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-flickr"></i></a>
+                    <a href="https://www.facebook.com/share/1BLCJEXRRH/"><i class="fa fa-facebook"></i></a>
+                    <a href="https://x.com/Myarajewelry"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.threads.com/@shopmyara"><i class="fa fa-comments"></i></a>
+                    <a href="https://www.instagram.com/shopmyara?igsh=MW03aXFzd3BsOHdveQ==
+"><i class="fa fa-instagram"></i></a>
+                    <a href="https://youtube.com/@myarajewellery-m5h?si=RBUXkIsRVi4_75eO"><i class="fa fa-youtube"></i></a>
                   </div>
 
                   <!-- <a href="#"><img src="assets/img/payment.png" alt="Payment Method"/></a> -->
@@ -724,7 +437,7 @@ function renderStars(rating) {
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="copyright-text">
-                        <p><a target="_blank" href="https://linktr.ee/dnxempire">myara</a></p>
+                        <p><a target="_blank">myara</a></p>
                     </div>
                 </div>
             </div>
@@ -740,20 +453,196 @@ function renderStars(rating) {
 <!-- Scroll to Top End -->
 
 
-<!--=======================Javascript============================-->
-<!--=== Jquery Min Js ===-->
-<script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
-<!--=== Jquery Migrate Min Js ===-->
+<!--=======================Javascript============================--><script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
 <script src="assets/js/vendor/jquery-migrate-1.4.1.min.js"></script>
-<!--=== Popper Min Js ===-->
 <script src="assets/js/vendor/popper.min.js"></script>
-<!--=== Bootstrap Min Js ===-->
 <script src="assets/js/vendor/bootstrap.min.js"></script>
-<!--=== Plugins Min Js ===-->
 <script src="assets/js/plugins.js"></script>
+<script src="assets/js/products.js"></script>
 
-<!--=== Active Js ===-->
+<script>
+function renderStars(rating) {
+  const full = Math.floor(rating);
+  const half = rating % 1 >= 0.5 ? 1 : 0;
+  const empty = 5 - full - half;
+  return (
+    "<i class='fa fa-star'></i>".repeat(full) +
+    (half ? "<i class='fa fa-star-half-o'></i>" : "") +
+    "<i class='fa fa-star-o'></i>".repeat(empty)
+  );
+}
+
+function renderMiniCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartBody = document.getElementById("mini-cart-body");
+  const cartCount = document.getElementById("cart-count");
+  if (!cartBody) return;
+  cartBody.innerHTML = "";
+  let totalItems = 0;
+  if (cart.length === 0) {
+    cartBody.innerHTML = "<p style='padding:15px'>Cart is empty</p>";
+    cartCount.innerText = 0;
+    return;
+  }
+  cart.forEach((item, index) => {
+    totalItems += item.quantity;
+    cartBody.innerHTML += `
+      <div class="single-cart-item d-flex">
+        <figure class="product-thumb">
+          <a href="single-product.html?id=${item.id}">
+            <img class="img-fluid" src="${item.image}" alt="${item.name}"/>
+          </a>
+        </figure>
+        <div class="product-details">
+          <h2><a href="single-product.html?id=${item.id}">${item.name}</a></h2>
+          <div class="cal d-flex align-items-center">
+            <span class="quantity">${item.quantity}</span>
+            <span class="multiplication">X</span>
+            <span class="price">${item.price} AED</span>
+          </div>
+        </div>
+        <a href="#" class="remove-icon" onclick="removeFromCart(${index})">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </div>`;
+  });
+  cartCount.innerText = totalItems;
+}
+
+function removeFromCart(index) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderMiniCart();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  renderMiniCart();
+
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id");
+  if (!productId) return;
+
+  const allProducts = [
+    ...(productData.featuredProducts || []),
+    ...(productData.newProducts || []),
+    ...(productData.saleProducts || []),
+    ...(productData.products || [])
+  ];
+
+  const product = allProducts.find(p => p.id === productId);
+
+  if (!product) {
+    const nameEl = document.getElementById("product-name");
+    if (nameEl) nameEl.innerText = "Product Not Found";
+    return;
+  }
+
+  document.title = product.name + " | Myara Jewellery";
+
+  const breadcrumb = document.getElementById("breadcrumb-product-name");
+  if (breadcrumb) breadcrumb.textContent = product.name;
+
+  const nameEl = document.getElementById("product-name");
+  if (nameEl) nameEl.innerText = product.name;
+
+  const priceEl = document.getElementById("product-price");
+  if (priceEl) priceEl.innerText = product.price + " AED";
+
+  const skuEl = document.getElementById("product-sku");
+  if (skuEl) skuEl.innerText = product.id;
+
+  const descEl = document.getElementById("product-description");
+  if (descEl) descEl.innerHTML = product.description || "<p>Luxury handcrafted piece from Myara Jewellery.</p>";
+
+  const imageContainer = document.getElementById("product-image-carousel");
+  if (imageContainer) {
+    imageContainer.innerHTML = `
+      <div class="single-thumb-item">
+        <img class="img-fluid" src="${product.image}" alt="${product.name}">
+      </div>`;
+    $(imageContainer).owlCarousel({
+      items: 1, loop: false, nav: true, dots: false
+    });
+  }
+
+  const longDescContainer = document.getElementById("product-long-description");
+  if (longDescContainer) {
+    longDescContainer.innerHTML = product.description || "<p>No description available.</p>";
+  }
+
+  const reviewList = document.getElementById("review-list");
+  const reviewSummary = document.getElementById("review-summary");
+  if (reviewList && reviewSummary) {
+    if (product.reviews && product.reviews.length > 0) {
+      let total = 0;
+      product.reviews.forEach(review => {
+        total += review.rating;
+        reviewList.innerHTML += `
+          <div class="sin-rattings">
+            <div class="ratting-author">
+              <h3>${review.name}</h3>
+              <div class="ratting-star">${renderStars(review.rating)}</div>
+            </div>
+            <p>${review.comment}</p>
+          </div>`;
+      });
+      const avg = (total / product.reviews.length).toFixed(1);
+      reviewSummary.innerHTML = `<div class="pro-avg-ratting"><h4>${avg} <span>(Overall)</span></h4><span>Based on ${product.reviews.length} Reviews</span></div>`;
+    } else {
+      reviewSummary.innerHTML = "<p>No reviews yet.</p>";
+    }
+  }
+
+  const addToCartBtn = document.getElementById("add-to-cart-btn");
+  if (addToCartBtn) {
+    addToCartBtn.addEventListener("click", function () {
+      let qty = parseInt(document.getElementById("qty")?.value) || 1;
+      if (qty < 1) qty = 1;
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.id === product.id);
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({ id: product.id, name: product.name, price: product.price, image: product.image, quantity: qty });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderMiniCart();
+      alert("Added to cart successfully!");
+    });
+  }
+
+  const wishlistBtn = document.getElementById("add-to-wishlist");
+  if (wishlistBtn) {
+    wishlistBtn.addEventListener("click", function () {
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      if (!wishlist.find(item => item.id === product.id)) {
+        wishlist.push(product);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        alert("Added to wishlist!");
+      } else {
+        alert("Already in wishlist!");
+      }
+    });
+  }
+
+  const compareBtn = document.getElementById("add-to-compare");
+  if (compareBtn) {
+    compareBtn.addEventListener("click", function () {
+      let compare = JSON.parse(localStorage.getItem("compare")) || [];
+      if (!compare.find(item => item.id === product.id)) {
+        compare.push(product);
+        localStorage.setItem("compare", JSON.stringify(compare));
+        alert("Added to compare!");
+      } else {
+        alert("Already in compare list!");
+      }
+    });
+  }
+});
+</script>
+
 <script src="assets/js/active.js"></script>
-</body>
 
+</body>
 </html>
