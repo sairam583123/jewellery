@@ -1,78 +1,78 @@
-  <!DOCTYPE html>
-  <html class="no-js" lang="zxx">
-    <head>
-      <meta charset="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="description" content="meta description" />
+<!doctype html>
+<html class="no-js" lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="meta description" />
 
-      <title>Myara Jewellery – Elegant, Handcrafted Designs</title>
-      <meta
-        name="description"
-        content="Discover beautiful handcrafted jewellery from Myara. Unique designs in earrings, rings, and more. Shop now!"
-      />
+    <title>Myara Jewellery – Elegant, Handcrafted Designs</title>
+    <meta
+      name="description"
+      content="Discover beautiful handcrafted jewellery from Myara. Unique designs in earrings, rings, and more. Shop now!"
+    />
 
-      <!--=== Favicon ===-->
-      <link
-        rel="shortcut icon"
-        href="assets/img/myara1.jpg"
-        type="image/x-icon"
-      />
+    <!--=== Favicon ===-->
+    <link
+      rel="shortcut icon"
+      href="assets/img/myara1.jpg"
+      type="image/x-icon"
+    />
 
-      <!--== Google Fonts ==-->
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i"
-      />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-      />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i"
-      />
-      <link href="assets/css/vendor/bootstrap.min.css" rel="stylesheet" />
-      <link href="assets/css/vendor/font-awesome.css" rel="stylesheet" />
-      <link href="assets/css/plugins.css" rel="stylesheet" />
-      <link href="assets/css/style.css" rel="stylesheet" />
-      <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-      <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
-      <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
-      <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "JewelryStore",
-          "name": "Myara Jewellery",
-          "url": "http://myara-jewellery.kesug.com",
-          "logo": "assets/img/myara1.jpg",
-          "description": "Myara Jewellery offers elegant handcrafted designs in earrings, rings, and more. Shop now for timeless beauty.",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Serilingampalli",
-            "addressRegion": "Telangana",
-            "addressCountry": "IN"
-          }
+    <!--== Google Fonts ==-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i"
+    />
+    <link href="assets/css/vendor/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/vendor/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/plugins.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "JewelryStore",
+        "name": "Myara Jewellery",
+        "url": "http://myara-jewellery.kesug.com",
+        "logo": "assets/img/myara1.jpg",
+        "description": "Myara Jewellery offers elegant handcrafted designs in earrings, rings, and more. Shop now for timeless beauty.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Serilingampalli",
+          "addressRegion": "Telangana",
+          "addressCountry": "IN"
         }
-      </script>
-      <script>
-    function renderMiniCart() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartBody = document.getElementById("mini-cart-body");
-    const cartCount = document.getElementById("cart-count");
-    cartBody.innerHTML = "";
-    let totalItems = 0;
-    if (cart.length === 0) {
-      cartBody.innerHTML = "<p style='padding:15px'>Cart is empty</p>";
-      cartCount.innerText = 0;
-      return;
-    }
-    cart.forEach((item, index) => {
-      totalItems += item.quantity;
-      cartBody.innerHTML += `
+      }
+    </script>
+    <script>
+      function renderMiniCart() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartBody = document.getElementById("mini-cart-body");
+        const cartCount = document.getElementById("cart-count");
+        cartBody.innerHTML = "";
+        let totalItems = 0;
+        if (cart.length === 0) {
+          cartBody.innerHTML = "<p style='padding:15px'>Cart is empty</p>";
+          cartCount.innerText = 0;
+          return;
+        }
+        cart.forEach((item, index) => {
+          totalItems += item.quantity;
+          cartBody.innerHTML += `
         <div class="single-cart-item d-flex">
           <figure class="product-thumb">
             <a href="single-product.html?id=${item.id}">
@@ -98,62 +98,59 @@
           </a>
         </div>
       `;
-    });
+        });
 
-    cartCount.innerText = totalItems;
-  }
+        cartCount.innerText = totalItems;
+      }
 
+      function removeFromCart(index) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderMiniCart();
+      }
+    </script>
+    <meta
+      name="google-site-verification"
+      content="xbG9wnNK-b-6XfgEk9JVB_JFU_C4fPAF5DZYAhcsEZQ"
+    />
+    <script src="assets/js/products.js"></script>
+    <script>
+      function renderStars(rating) {
+        const full = Math.floor(rating);
+        const half = rating % 1 >= 0.5 ? 1 : 0;
+        const empty = 5 - full - half;
 
-  function removeFromCart(index) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderMiniCart();
-  }
-      </script>
-      <meta
-        name="google-site-verification"
-        content="xbG9wnNK-b-6XfgEk9JVB_JFU_C4fPAF5DZYAhcsEZQ"
-      />
-      <script src="assets/js/products.js"></script>
-      <script>
-      
-        function renderStars(rating) {
-          const full = Math.floor(rating);
-          const half = rating % 1 >= 0.5 ? 1 : 0;
-          const empty = 5 - full - half;
+        return (
+          "<i class='fa fa-star'></i>".repeat(full) +
+          (half ? "<i class='fa fa-star-half'></i>" : "") +
+          "<i class='fa fa-star-o'></i>".repeat(empty)
+        );
+      }
 
-          return (
-            "<i class='fa fa-star'></i>".repeat(full) +
-            (half ? "<i class='fa fa-star-half'></i>" : "") +
-            "<i class='fa fa-star-o'></i>".repeat(empty)
-          );
+      function addToCart(id, name, price, image) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const index = cart.findIndex((item) => item.id === id);
+
+        if (index !== -1) {
+          cart[index].quantity += 1;
+        } else {
+          cart.push({ id, name, price, image, quantity: 1 });
         }
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderMiniCart();
+      }
 
-        function addToCart(id, name, price, image) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const index = cart.findIndex(item => item.id === id);
+      function renderCarousel(selector, products) {
+        const container = document.querySelector(selector);
+        if (!container) return;
 
-    if (index !== -1) {
-      cart[index].quantity += 1;
-    } else {
-      cart.push({ id, name, price, image, quantity: 1 });
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderMiniCart(); 
-  }
+        container.innerHTML = "";
 
-    
-        function renderCarousel(selector, products) {
-          const container = document.querySelector(selector);
-          if (!container) return;
-
-          container.innerHTML = "";
-
-          products.forEach((product) => {
-            const item = document.createElement("div");
-            item.className = "single-product-item text-center";
-            item.innerHTML = `
+        products.forEach((product) => {
+          const item = document.createElement("div");
+          item.className = "single-product-item text-center";
+          item.innerHTML = `
           <figure class="product-thumb">
             <a  href="single-product.html?id=${product.id}">
               <img src="${product.image}" alt="${product.name}" class="img-fluid">
@@ -166,8 +163,8 @@
             <span class="price">${product.price} AED</span>
             <a href="#" class="btn btn-add-to-cart"
               onclick="event.preventDefault();addToCart('${product.id}', '${product.name}', ${
-              product.price
-            }, '${product.image}')">
+                product.price
+              }, '${product.image}')">
               + Add to Cart
             </a>
             ${
@@ -181,7 +178,7 @@
 
           <div class="product-meta">
             <button type="button" data-toggle="modal" data-target="#quickView" onclick='openQuickView(${JSON.stringify(
-              product
+              product,
             )})'>
               <span data-toggle="tooltip" data-placement="left" title="Quick View">
                 <i class="fa fa-compress"></i>
@@ -195,35 +192,35 @@
             </a>
           </div>
         `;
-            container.appendChild(item);
-          });
+          container.appendChild(item);
+        });
 
-          $(container).owlCarousel({
-            loop: true,
-            margin: 30,
-            nav: true,
-            dots: false,
-            responsive: {
-              0: { items: 1 },
-              576: { items: 2 },
-              768: { items: 3 },
-              992: { items: 4 },
-            },
-          });
-        }
+        $(container).owlCarousel({
+          loop: true,
+          margin: 30,
+          nav: true,
+          dots: false,
+          responsive: {
+            0: { items: 1 },
+            576: { items: 2 },
+            768: { items: 3 },
+            992: { items: 4 },
+          },
+        });
+      }
 
-        function renderTabProducts(tabSelector, productList) {
-          const container = document.querySelector(
-            `${tabSelector} .products-carousel`
-          );
-          if (!container) return;
+      function renderTabProducts(tabSelector, productList) {
+        const container = document.querySelector(
+          `${tabSelector} .products-carousel`,
+        );
+        if (!container) return;
 
-          container.innerHTML = "";
+        container.innerHTML = "";
 
-          productList.forEach((product) => {
-            const item = document.createElement("div");
-            item.className = "single-product-item text-center";
-            item.innerHTML = `
+        productList.forEach((product) => {
+          const item = document.createElement("div");
+          item.className = "single-product-item text-center";
+          item.innerHTML = `
           <figure class="product-thumb">
             <a  href="single-product.html?id=${product.id}">
               <img src="${product.image}" alt="${product.name}" class="img-fluid">
@@ -251,7 +248,7 @@
 
           <div class="product-meta">
             <button type="button" data-toggle="modal" data-target="#quickView" onclick='openQuickView(${JSON.stringify(
-              product
+              product,
             )})'>
               <span data-toggle="tooltip" data-placement="left" title="Quick View">
                 <i class="fa fa-compress"></i>
@@ -265,35 +262,33 @@
             </a>
           </div>
         `;
-            container.appendChild(item);
-          });
-
-          $(container).owlCarousel({
-            loop: true,
-            margin: 30,
-            nav: true,
-            dots: false,
-            responsive: {
-              0: { items: 1 },
-              576: { items: 2 },
-              768: { items: 3 },
-              992: { items: 4 },
-            },
-          });
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-          renderTabProducts("#feature-products",  productData.featuredProducts);
-          renderTabProducts("#new-products", productData.newProducts);
-          renderTabProducts("#onsale", productData.saleProducts);
-          renderCarousel(".new-products-carousel", productData.carouselProducts);
+          container.appendChild(item);
         });
-       
 
-        function openQuickView(product) {
+        $(container).owlCarousel({
+          loop: true,
+          margin: 30,
+          nav: true,
+          dots: false,
+          responsive: {
+            0: { items: 1 },
+            576: { items: 2 },
+            768: { items: 3 },
+            992: { items: 4 },
+          },
+        });
+      }
 
-  const thumbCarousel = document.querySelector(".product-thumb-carousel");
-  thumbCarousel.innerHTML = `
+      document.addEventListener("DOMContentLoaded", () => {
+        renderTabProducts("#feature-products", productData.featuredProducts);
+        renderTabProducts("#new-products", productData.newProducts);
+        renderTabProducts("#onsale", productData.saleProducts);
+        renderCarousel(".new-products-carousel", productData.newProducts);
+      });
+
+      function openQuickView(product) {
+        const thumbCarousel = document.querySelector(".product-thumb-carousel");
+        thumbCarousel.innerHTML = `
     <div class="single-thumb-item">
       <a href="single-product.html?id=${product.id}">
         <img class="img-fluid" src="${product.image}" alt="${product.name}" />
@@ -301,43 +296,41 @@
     </div>
   `;
 
-  // Product Name
-  const nameLink = document.querySelector("#quickview-product-name");
-  nameLink.innerText = product.name;
-  nameLink.setAttribute("href", `single-product.html?id=${product.id}`);
+        // Product Name
+        const nameLink = document.querySelector("#quickview-product-name");
+        nameLink.innerText = product.name;
+        nameLink.setAttribute("href", `single-product.html?id=${product.id}`);
 
-  // Rating
-  document.querySelector("#quickview-product-rating").innerHTML =
-    renderStars(product.rating);
+        // Rating
+        document.querySelector("#quickview-product-rating").innerHTML =
+          renderStars(product.rating);
 
-  // Price
-  document.querySelector("#quickview-product-price").innerText =
-    `${product.price} AED`;
+        // Price
+        document.querySelector("#quickview-product-price").innerText =
+          `${product.price} AED`;
 
-  // SKU
-  document.querySelector("#quickview-product-sku").innerHTML =
-    `<strong>SKU</strong> - ${product.id}`;
+        // SKU
+        document.querySelector("#quickview-product-sku").innerHTML =
+          `<strong>SKU</strong> - ${product.id}`;
 
-  // Description
-  document.querySelector("#quickview-product-description").innerHTML =
-    product.description || "Elegant handcrafted piece from Myara's collection.";
+        // Description
+        document.querySelector("#quickview-product-description").innerHTML =
+          product.description ||
+          "Elegant handcrafted piece from Myara's collection.";
 
-  // Add To Cart Button
-  document.querySelector("#quickview-add-to-cart").setAttribute(
-    "onclick",
-    `addToCart('${product.id}', '${product.name}', ${product.price}, '${product.image}')`
-  );
-}
-
-    
-    
+        // Add To Cart Button
+        document
+          .querySelector("#quickview-add-to-cart")
+          .setAttribute(
+            "onclick",
+            `addToCart('${product.id}', '${product.name}', ${product.price}, '${product.image}')`,
+          );
+      }
     </script>
+  </head>
 
-
-    </head>
-
-    <body>
-       <header id="header-area">
+  <body>
+    <header id="header-area">
       <div class="ruby-container">
         <div class="row">
           <!-- Logo Area Start -->
@@ -390,23 +383,23 @@
                 </li>
 
                 <li class="shop-cart">
-  <a href="#">
-    <i class="fa fa-shopping-bag"></i>
-    <span class="count" id="cart-count">0</span>
-  </a>
+                  <a href="#">
+                    <i class="fa fa-shopping-bag"></i>
+                    <span class="count" id="cart-count">0</span>
+                  </a>
 
-  <div class="mini-cart">
-    <div class="mini-cart-body" id="mini-cart-body">
-      <!-- Items will load dynamically -->
-    </div>
+                  <div class="mini-cart">
+                    <div class="mini-cart-body" id="mini-cart-body">
+                      <!-- Items will load dynamically -->
+                    </div>
 
-    <div class="mini-cart-footer">
-      <a href="checkout.html" class="btn-add-to-cart">Checkout</a>
-    </div>
-  </div>
-</li>
-
-          
+                    <div class="mini-cart-footer">
+                      <a href="checkout.html" class="btn-add-to-cart"
+                        >Checkout</a
+                      >
+                    </div>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -414,303 +407,304 @@
         </div>
       </div>
     </header>
-      <div class="body-popup-modal-area">
-        <span class="modal-close"
-          ><img src="assets/img/cancel.png" alt="Close" class="img-fluid"
-        /></span>
-        <div class="modal-container d-flex">
-          <div class="search-box-area">
-            <div class="search-box-form">
-              <form action="#" method="post">
-                <input type="search" placeholder="type keyword and hit enter" />
-                <button class="btn" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </form>
-            </div>
+    <div class="body-popup-modal-area">
+      <span class="modal-close"
+        ><img src="assets/img/cancel.png" alt="Close" class="img-fluid"
+      /></span>
+      <div class="modal-container d-flex">
+        <div class="search-box-area">
+          <div class="search-box-form">
+            <form action="#" method="post">
+              <input type="search" placeholder="type keyword and hit enter" />
+              <button class="btn" type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
           </div>
         </div>
       </div>
+    </div>
 
-      <section id="banner-area">
-        <div class="ruby-container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div id="banner-carousel" class="owl-carousel">
-                <div class="single-carousel-wrap slide-item-1">
-                  <div class="banner-caption text-center text-lg-left">
-                    <h4>Myara Store</h4>
-                    <h2>Ring Solitaire Princess</h2>
-                    <p>From heart to hand — a ring of pure devotion.</p>
-                  </div>
+    <section id="banner-area">
+      <div class="ruby-container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div id="banner-carousel" class="owl-carousel">
+              <div class="single-carousel-wrap slide-item-1">
+                <div class="banner-caption text-center text-lg-left">
+                  <h4>Myara Store</h4>
+                  <h2>Ring Solitaire Princess</h2>
+                  <p>From heart to hand — a ring of pure devotion.</p>
                 </div>
+              </div>
 
-                <div class="single-carousel-wrap slide-item-2">
-                  <div class="banner-caption text-center text-lg-left">
-                    <h4>New Collection 2026</h4>
-                    <h2>Beautiful Earrings</h2>
-                    <p>
-                      Adorn your ears with timeless elegance — where every sparkle
-                      speaks beauty.
-                    </p>
-                  </div>
+              <div class="single-carousel-wrap slide-item-2">
+                <div class="banner-caption text-center text-lg-left">
+                  <h4>New Collection 2026</h4>
+                  <h2>Beautiful Earrings</h2>
+                  <p>
+                    Adorn your ears with timeless elegance — where every sparkle
+                    speaks beauty.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="aboutUs-area" class="pt-9">
-        <div class="ruby-container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="about-image-wrap">
+    <section id="aboutUs-area" class="pt-9">
+      <div class="ruby-container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-image-wrap">
               <img
-                    src="assets/img/4_20251119_083724_0003.png"
-                    alt="About Us"
-                    class="img-fluid"
-                />
-              </div>
+                src="assets/img/4_20251119_083724_0003.png"
+                alt="About Us"
+                class="img-fluid"
+              />
             </div>
+          </div>
 
-            <div class="col-lg-6 m-auto">
-              <div class="about-content-wrap ml-0 ml-lg-5 mt-5 mt-lg-0">
-                <h2>About Us</h2>
-                <h3>WE ARE VISIONARY</h3>
-                <div class="about-text">
-                  <p>
-                    For over 12 years, Myara Jewellery has been a symbol of
-                    elegance, craftsmanship, and purity. Established in 2019 the brand is rooted in tradition and
-                    refined through experience. We specialize in 24K gold and
-                    exquisite diamond jewellery — each piece meticulously designed
-                    to reflect sophistication and grace
-                  </p>
-                  <p></p>
+          <div class="col-lg-6 m-auto">
+            <div class="about-content-wrap ml-0 ml-lg-5 mt-5 mt-lg-0">
+              <h2>About Us</h2>
+              <h3>WE ARE VISIONARY</h3>
+              <div class="about-text">
+                <p>
+                  For over 10 years, Myara Jewellery has been a symbol of
+                  elegance, craftsmanship, and purity. Established in 2014, the
+                  brand is rooted in tradition and refined through experience.
+                  We specialize in 24K gold and exquisite diamond jewellery —
+                  each piece meticulously designed to reflect sophistication and
+                  grace.
+                </p>
+                <p></p>
 
-                  <p>
-                    Today, we step into a bold new chapter: bringing our heritage
-                    to the world through a premium online store. Our mission is to
-                    make luxury accessible — wherever you are. With global
-                    shipping and high-security delivery services, we ensure that
-                    your treasured piece of Myara arrives safely, securely, and
-                    with the exclusivity it deserves. Whether you're celebrating
-                    milestones or embracing timeless beauty, Myara Jewellery is
-                    here to make every moment shine — with authenticity, elegance,
-                    and trust.
-                  </p>
+                <p>
+                  Today, we step into a bold new chapter: bringing our heritage
+                  to the world through a premium online store. Our mission is to
+                  make luxury accessible — wherever you are. With global
+                  shipping and high-security delivery services, we ensure that
+                  your treasured piece of Myara arrives safely, securely, and
+                  with the exclusivity it deserves. Whether you're celebrating
+                  milestones or embracing timeless beauty, Myara Jewellery is
+                  here to make every moment shine — with authenticity, elegance,
+                  and trust.
+                </p>
 
-
-                  <h4 class="vertical-text">WHO WE ARE?</h4>
-                </div>
+                <h4 class="vertical-text">WHO WE ARE?</h4>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="new-collection-area" class="p-9">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center">
-              <div class="section-title">
-                <h2>New Collection Products</h2>
-                <p>Best products on sale.</p>
-              </div>
+    <section id="new-collection-area" class="p-9">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="section-title">
+              <h2>New Collection Products</h2>
+              <p>Best products on sale.</p>
             </div>
           </div>
+        </div>
 
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="new-collection-tabs">
-                <ul class="nav tab-menu-wrap" id="myTab" role="tablist">
-                  <li class="nav-item">
-                    <a
-                      class="active"
-                      id="feature-products-tab"
-                      data-toggle="tab"
-                      href="#feature-products"
-                      role="tab"
-                      aria-controls="feature-products-tab"
-                      aria-selected="true"
-                      >Feature Products</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      id="new-products-tab"
-                      data-toggle="tab"
-                      href="#new-products"
-                      role="tab"
-                      aria-controls="new-products"
-                      aria-selected="false"
-                      >New Products</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      id="onsale-tab"
-                      data-toggle="tab"
-                      href="#onsale"
-                      role="tab"
-                      aria-controls="onsale"
-                      aria-selected="false"
-                      >Onsale</a
-                    >
-                  </li>
-                </ul>
-                <!-- Tab Menu Area End -->
-
-                <!-- Tab Content Area Start -->
-                <div class="tab-content" id="myTabContent">
-                  <div
-                    class="tab-pane fade show active"
-                    id="feature-products"
-                    role="tabpanel"
-                    aria-labelledby="feature-products-tab"
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="new-collection-tabs">
+              <ul class="nav tab-menu-wrap" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a
+                    class="active"
+                    id="feature-products-tab"
+                    data-toggle="tab"
+                    href="#feature-products"
+                    role="tab"
+                    aria-controls="feature-products-tab"
+                    aria-selected="true"
+                    >Feature Products</a
                   >
-                    <div class="products-wrapper">
-                      <div class="products-carousel owl-carousel">
-                        <!-- All hardcoded product items here -->
-                      </div>
-                    </div>
-                  </div>
+                </li>
+                <li class="nav-item">
+                  <a
+                    id="new-products-tab"
+                    data-toggle="tab"
+                    href="#new-products"
+                    role="tab"
+                    aria-controls="new-products"
+                    aria-selected="false"
+                    >New Products</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    id="onsale-tab"
+                    data-toggle="tab"
+                    href="#onsale"
+                    role="tab"
+                    aria-controls="onsale"
+                    aria-selected="false"
+                    >Onsale</a
+                  >
+                </li>
+              </ul>
+              <!-- Tab Menu Area End -->
 
-                  <div class="tab-pane fade" id="new-products" ...>
-                    <div class="products-wrapper">
-                      <div class="products-carousel owl-carousel"></div>
-                    </div>
-                  </div>
-
-                  <div class="tab-pane fade" id="onsale" ...>
-                    <div class="products-wrapper">
-                      <div class="products-carousel owl-carousel"></div>
+              <!-- Tab Content Area Start -->
+              <div class="tab-content" id="myTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="feature-products"
+                  role="tabpanel"
+                  aria-labelledby="feature-products-tab"
+                >
+                  <div class="products-wrapper">
+                    <div class="products-carousel owl-carousel">
+                      <!-- All hardcoded product items here -->
                     </div>
                   </div>
                 </div>
-                <!-- Tab Content Area End -->
+
+                <div class="tab-pane fade" id="new-products" ...>
+                  <div class="products-wrapper">
+                    <div class="products-carousel owl-carousel"></div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="onsale" ...>
+                  <div class="products-wrapper">
+                    <div class="products-carousel owl-carousel"></div>
+                  </div>
+                </div>
               </div>
+              <!-- Tab Content Area End -->
             </div>
           </div>
         </div>
-      </section>
-      <!--== New Collection Area End ==-->
+      </div>
+    </section>
+    <!--== New Collection Area End ==-->
 
-      <!--== Products by Category Area Start ==-->
-      <div id="product-categories-area">
-        <div class="ruby-container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="large-size-cate">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <div class="single-cat-item">
-                      <figure class="category-thumb">
-                        <a href="shop-full-wide.html"
-                          ><img
-                            src="assets/img/1_20251119_083724_0000.png"
-                            
-                            alt="Women Category"
-                            class="img-fluid"
-                        /></a>
+    <!--== Products by Category Area Start ==-->
+    <div id="product-categories-area">
+      <div class="ruby-container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="large-size-cate">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="single-cat-item">
+                    <figure class="category-thumb">
+                      <a href="shop-full-wide.html"
+                        ><img
+                          src="assets/img/1_20251119_083724_0000.png"
+                          alt="Women Category"
+                          class="img-fluid"
+                      /></a>
 
-                        <figcaption class="category-name">
-                          <a href="#">Latest Collections</a>
-                        </figcaption>
-                      </figure>
-                    </div>
+                      <figcaption class="category-name">
+                        <a href="#">Latest Collections</a>
+                      </figcaption>
+                    </figure>
                   </div>
+                </div>
 
-                  <div class="col-sm-6">
-                    <div class="single-cat-item">
-                      <figure class="category-thumb">
-                        <a href="shop-full-wide.html"
-                          ><img
-                            src="assets/img/20260112_084934_0006.png"
-                            alt="Men Category"
-                            class="img-fluid"
-                        /></a>
+                <div class="col-sm-6">
+                  <div class="single-cat-item">
+                    <figure class="category-thumb">
+                      <a href="shop-full-wide.html"
+                        ><img
+                          src="assets/img/20260112_084934_0006.png"
+                          alt="Men Category"
+                          class="img-fluid"
+                      /></a>
 
-                        <figcaption class="category-name">
-                          <a href="#">Best selling</a>
-                        </figcaption>
-                      </figure>
-                    </div>
+                      <figcaption class="category-name">
+                        <a href="#">Best selling</a>
+                      </figcaption>
+                    </figure>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="col-lg-6">
-              <div class="small-size-cate">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <div class="single-cat-item">
-                      <figure class="category-thumb">
-                        <a href="shop-right-full-wide.html"
-                          ><img
-                            src="assets/img/20260112_084934_0003.png"
-                            alt="Men Category"
-                            class="img-fluid"
-                        /></a>
+          <div class="col-lg-6">
+            <div class="small-size-cate">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="single-cat-item">
+                    <figure class="category-thumb">
+                      <a href="shop-right-full-wide.html"
+                        ><img
+                          src="assets/img/20260112_084934_0003.png"
+                          alt="Men Category"
+                          class="img-fluid"
+                      /></a>
 
-                        <figcaption class="category-name">
-                          <a href="shop-right-full-wide.html?category=rings">Rings</a>
-                        </figcaption>
-                      </figure>
-                    </div>
+                      <figcaption class="category-name">
+                        <a href="shop-right-full-wide.html?category=rings"
+                          >Rings</a
+                        >
+                      </figcaption>
+                    </figure>
                   </div>
+                </div>
 
-                  <div class="col-sm-6">
-                    <div class="single-cat-item">
-                      <figure class="category-thumb">
-                        <a href="shop-right-full-wide.html"
-                          ><img
-                            src="assets/img/20260116_083254_0003.png"
-                            alt="Men Category"
-                            class="img-fluid"
-                        /></a>
+                <div class="col-sm-6">
+                  <div class="single-cat-item">
+                    <figure class="category-thumb">
+                      <a href="shop-right-full-wide.html"
+                        ><img
+                          src="assets/img/20260116_083254_0003.png"
+                          alt="Men Category"
+                          class="img-fluid"
+                      /></a>
 
-                        <figcaption class="category-name">
-                        <a href="shop-right-full-wide.html?category=earrings">Ear Rings</a>
-
-                        </figcaption>
-                      </figure>
-                    </div>
+                      <figcaption class="category-name">
+                        <a href="shop-right-full-wide.html?category=earrings"
+                          >Ear Rings</a
+                        >
+                      </figcaption>
+                    </figure>
                   </div>
+                </div>
 
-                  <div class="col-sm-6">
-                    <div class="single-cat-item">
-                      <figure class="category-thumb">
-                        <a href="shop-right-full-wide.html"
-                          ><img
-                            src="assets/img/20260112_084933_0001.png"
-                            alt="Men Category"
-                            class="img-fluid"
-                        /></a>
+                <div class="col-sm-6">
+                  <div class="single-cat-item">
+                    <figure class="category-thumb">
+                      <a href="shop-right-full-wide.html"
+                        ><img
+                          src="assets/img/20260112_084933_0001.png"
+                          alt="Men Category"
+                          class="img-fluid"
+                      /></a>
 
-                        <figcaption class="category-name">
-                          <a href="shop-right-full-wide.html">Bracelets</a>
-                        </figcaption>
-                      </figure>
-                    </div>
+                      <figcaption class="category-name">
+                        <a href="shop-right-full-wide.html">Bracelets</a>
+                      </figcaption>
+                    </figure>
                   </div>
+                </div>
 
-                  <div class="col-sm-6">
-                    <div class="single-cat-item">
-                      <figure class="category-thumb">
-                        <a href="shop-right-full-wide.html"
-                          ><img
-                            src="assets/img/20260112_084934_0004.png"
-                            alt="Men Category"
-                            class="img-fluid"
-                        /></a>
+                <div class="col-sm-6">
+                  <div class="single-cat-item">
+                    <figure class="category-thumb">
+                      <a href="shop-right-full-wide.html"
+                        ><img
+                          src="assets/img/20260112_084934_0004.png"
+                          alt="Men Category"
+                          class="img-fluid"
+                      /></a>
 
-                        <figcaption class="category-name">
-                          <a href="shop-right-full-wide.html">Check out more..</a>
-                        </figcaption>
-                      </figure>
-                    </div>
+                      <figcaption class="category-name">
+                        <a href="shop-right-full-wide.html">Check out more..</a>
+                      </figcaption>
+                    </figure>
                   </div>
                 </div>
               </div>
@@ -718,202 +712,345 @@
           </div>
         </div>
       </div>
-      <!--== Products by Category Area End ==-->
+    </div>
+    <!--== Products by Category Area End ==-->
 
-      <!--== New Products Area Start ==-->
-      <section id="new-products-area" class="p-9">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center">
-              <!-- Section Title Start -->
-              <div class="section-title">
-                <h2>New Products</h2>
-                <p>Trending stunning Unique</p>
-              </div>
-              <!-- Section Title End -->
+    <!--== New Products Area Start ==-->
+    <section id="new-products-area" class="p-9">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <!-- Section Title Start -->
+            <div class="section-title">
+              <h2>New Products</h2>
+              <p>Trending stunning Unique</p>
             </div>
+            <!-- Section Title End -->
           </div>
+        </div>
 
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="products-wrapper">
-                <div class="new-products-carousel owl-carousel"></div>
-              </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="products-wrapper">
+              <div class="new-products-carousel owl-carousel"></div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+    <!-- Testimonials Section Start -->
+<section id="testimonials-area" class="p-9">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="section-title">
+          <h2>What Our Customers Say</h2>
+          <p>Trusted by jewellery lovers across the world</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
 
-      <!-- Footer Area Start -->
-     <div id="footer-placeholder"></div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="testimonial-card" style="background:var(--white,#fff);border:1px solid #f0e6d3;border-radius:8px;padding:24px;height:100%;">
+          <div style="color:#c9a84c;font-size:18px;margin-bottom:10px;">★★★★★</div>
+          <p style="font-style:italic;color:#666;line-height:1.7;margin-bottom:16px;">"The ring I ordered was absolutely stunning. The craftsmanship is unreal — exactly as pictured and delivered safely."</p>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:#e8d5b7;display:flex;align-items:center;justify-content:center;font-weight:600;color:#8b6914;flex-shrink:0;">FA</div>
+            <div>
+              <strong style="display:block;font-size:14px;">Fatima Al Rashid</strong>
+              <span style="font-size:12px;color:#999;">Dubai, UAE</span>
+              <span style="display:block;font-size:11px;color:#2e7d32;">✓ Verified Purchase</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <!-- Footer Area End -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="testimonial-card" style="background:var(--white,#fff);border:1px solid #f0e6d3;border-radius:8px;padding:24px;height:100%;">
+          <div style="color:#c9a84c;font-size:18px;margin-bottom:10px;">★★★★★</div>
+          <p style="font-style:italic;color:#666;line-height:1.7;margin-bottom:16px;">"Ordered a gold bracelet as a gift. She loved it! Quality is top-notch and the packaging was luxurious."</p>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:#d4edda;display:flex;align-items:center;justify-content:center;font-weight:600;color:#155724;flex-shrink:0;">PS</div>
+            <div>
+              <strong style="display:block;font-size:14px;">Priya Sharma</strong>
+              <span style="font-size:12px;color:#999;">Mumbai, India</span>
+              <span style="display:block;font-size:11px;color:#2e7d32;">✓ Verified Purchase</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <!-- Start All Modal Content -->
-      <!--== Product Quick View Modal Area Wrap ==-->
-      <div class="modal fade" id="quickView" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">
-                <img src="assets/img/cancel.png" alt="Close" class="img-fluid" />
-              </span>
-            </button>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="testimonial-card" style="background:var(--white,#fff);border:1px solid #f0e6d3;border-radius:8px;padding:24px;height:100%;">
+          <div style="color:#c9a84c;font-size:18px;margin-bottom:10px;">★★★★★</div>
+          <p style="font-style:italic;color:#666;line-height:1.7;margin-bottom:16px;">"Myara Jewellery is authentic and elegant. The diamond earrings I bought exceeded my expectations completely."</p>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:#f8d7da;display:flex;align-items:center;justify-content:center;font-weight:600;color:#721c24;flex-shrink:0;">NA</div>
+            <div>
+              <strong style="display:block;font-size:14px;">Noura Al Mansoori</strong>
+              <span style="font-size:12px;color:#999;">Abu Dhabi, UAE</span>
+              <span style="display:block;font-size:11px;color:#2e7d32;">✓ Verified Purchase</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <div class="modal-body">
-              <div class="quick-view-content single-product-page-content">
-                <div class="row">
-                  <!-- Product Thumbnail Start -->
-                  <div class="col-lg-5 col-md-6">
-                    <div class="product-thumbnail-wrap">
-                      <div class="product-thumb-carousel owl-carousel">
-                        <!-- This gets dynamically replaced -->
-                      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="testimonial-card" style="background:var(--white,#fff);border:1px solid #f0e6d3;border-radius:8px;padding:24px;height:100%;">
+          <div style="color:#c9a84c;font-size:18px;margin-bottom:10px;">★★★★★</div>
+          <p style="font-style:italic;color:#666;line-height:1.7;margin-bottom:16px;">"Fast delivery, secure packaging and genuine 24K gold. Will definitely order again from Myara!"</p>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:#cce5ff;display:flex;align-items:center;justify-content:center;font-weight:600;color:#004085;flex-shrink:0;">RK</div>
+            <div>
+              <strong style="display:block;font-size:14px;">Rania Khalil</strong>
+              <span style="font-size:12px;color:#999;">Riyadh, Saudi Arabia</span>
+              <span style="display:block;font-size:11px;color:#2e7d32;">✓ Verified Purchase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="testimonial-card" style="background:var(--white,#fff);border:1px solid #f0e6d3;border-radius:8px;padding:24px;height:100%;">
+          <div style="color:#c9a84c;font-size:18px;margin-bottom:10px;">★★★★★</div>
+          <p style="font-style:italic;color:#666;line-height:1.7;margin-bottom:16px;">"Bought a necklace for my wedding. It was perfect — elegant, well made and delivered on time. Thank you Myara!"</p>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:#fff3cd;display:flex;align-items:center;justify-content:center;font-weight:600;color:#856404;flex-shrink:0;">SA</div>
+            <div>
+              <strong style="display:block;font-size:14px;">Sara Ahmed</strong>
+              <span style="font-size:12px;color:#999;">Hyderabad, India</span>
+              <span style="display:block;font-size:11px;color:#2e7d32;">✓ Verified Purchase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="testimonial-card" style="background:var(--white,#fff);border:1px solid #f0e6d3;border-radius:8px;padding:24px;height:100%;">
+          <div style="color:#c9a84c;font-size:18px;margin-bottom:10px;">★★★★★</div>
+          <p style="font-style:italic;color:#666;line-height:1.7;margin-bottom:16px;">"The quality and beauty of Myara pieces are unmatched. I get compliments every time I wear my bracelet."</p>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:#f0e6ff;display:flex;align-items:center;justify-content:center;font-weight:600;color:#4a235a;flex-shrink:0;">LM</div>
+            <div>
+              <strong style="display:block;font-size:14px;">Layla Mohammed</strong>
+              <span style="font-size:12px;color:#999;">London, UK</span>
+              <span style="display:block;font-size:11px;color:#2e7d32;">✓ Verified Purchase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Testimonials Section End -->
+
+<!-- Payment Trust Badges Start -->
+<section id="payment-trust-area" style="padding: 40px 0; border-top: 1px solid #f0e6d3; border-bottom: 1px solid #f0e6d3; background: #fdfaf6;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+
+        <p style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#999;margin-bottom:16px;">Secure Payment Methods</p>
+
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin-bottom:20px;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;border:1px solid #ddd;border-radius:6px;background:#fff;min-width:80px;height:44px;">
+            <svg width="50" height="16" viewBox="0 0 50 16"><rect width="50" height="16" rx="3" fill="#1A1F71"/><text x="25" y="12" font-size="9" font-weight="700" fill="white" text-anchor="middle" font-family="Arial">VISA</text></svg>
+          </span>
+          <span style="display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;border:1px solid #ddd;border-radius:6px;background:#fff;min-width:80px;height:44px;">
+            <svg width="52" height="32" viewBox="0 0 52 32"><circle cx="20" cy="16" r="11" fill="#EB001B"/><circle cx="32" cy="16" r="11" fill="#F79E1B"/><path d="M26 8.5a11 11 0 0 1 0 15 11 11 0 0 1 0-15z" fill="#FF5F00"/></svg>
+          </span>
+          <span style="display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;border:1px solid #ddd;border-radius:6px;background:#fff;min-width:80px;height:44px;">
+            <svg width="60" height="20" viewBox="0 0 60 20"><text x="0" y="14" font-size="11" font-weight="700" fill="#003087" font-family="Arial">Pay</text><text x="22" y="14" font-size="11" font-weight="700" fill="#009CDE" font-family="Arial">Pal</text></svg>
+          </span>
+          <span style="display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;border:1px solid #ddd;border-radius:6px;background:#fff;min-width:80px;height:44px;">
+            <svg width="56" height="22" viewBox="0 0 56 22"><rect width="56" height="22" rx="3" fill="#252525"/><text x="28" y="15" font-size="9" font-weight="600" fill="white" text-anchor="middle" font-family="Arial">AMEX</text></svg>
+          </span>
+          <span style="display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;border:1px solid #ddd;border-radius:6px;background:#fff;min-width:80px;height:44px;">
+            <svg width="60" height="22" viewBox="0 0 60 22"><rect width="60" height="22" rx="3" fill="#FF6600"/><text x="30" y="15" font-size="8" font-weight="700" fill="white" text-anchor="middle" font-family="Arial">CASH ON DELIVERY</text></svg>
+          </span>
+          <span style="display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;border:1px solid #ddd;border-radius:6px;background:#fff;min-width:80px;height:44px;">
+            <svg width="60" height="22" viewBox="0 0 60 22"><rect width="60" height="22" rx="3" fill="#00457C"/><text x="30" y="15" font-size="8" font-weight="600" fill="white" text-anchor="middle" font-family="Arial">BANK TRANSFER</text></svg>
+          </span>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;font-size:13px;color:#666;">
+          <span>&#10003; SSL Secured Checkout</span>
+          <span>&#10003; 30-Day Money Back</span>
+          <span>&#10003; Encrypted Payments</span>
+          <span>&#10003; 24/7 Customer Support</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Payment Trust Badges End -->
+
+    <!-- Footer Area Start -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Footer Area End -->
+
+    <!-- Start All Modal Content -->
+    <!--== Product Quick View Modal Area Wrap ==-->
+    <div class="modal fade" id="quickView" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">
+              <img src="assets/img/cancel.png" alt="Close" class="img-fluid" />
+            </span>
+          </button>
+
+          <div class="modal-body">
+            <div class="quick-view-content single-product-page-content">
+              <div class="row">
+                <!-- Product Thumbnail Start -->
+                <div class="col-lg-5 col-md-6">
+                  <div class="product-thumbnail-wrap">
+                    <div class="product-thumb-carousel owl-carousel">
+                      <!-- This gets dynamically replaced -->
                     </div>
                   </div>
-                  <!-- Product Thumbnail End -->
+                </div>
+                <!-- Product Thumbnail End -->
 
-                  <!-- Product Details Start -->
-                  <div class="col-lg-7 col-md-6 mt-5 mt-md-0">
-                    <div class="product-details">
-                      <h2>
-                        <a href="#" id="quickview-product-name">
-Product Name</a
-                        >
-                      </h2>
+                <!-- Product Details Start -->
+                <div class="col-lg-7 col-md-6 mt-5 mt-md-0">
+                  <div class="product-details">
+                    <h2>
+                      <a href="#" id="quickview-product-name"> Product Name</a>
+                    </h2>
 
-                      <div class="rating" id="quickview-product-rating">
-                        <!-- Stars will be inserted dynamically -->
-                      </div>
+                    <div class="rating" id="quickview-product-rating">
+                      <!-- Stars will be inserted dynamically -->
+                    </div>
 
-                      <span class="price" id="quickview-product-price"
-                        >0 AED</span
+                    <span class="price" id="quickview-product-price"
+                      >0 AED</span
+                    >
+
+                    <div class="product-info-stock-sku">
+                      <span class="product-stock-status">In Stock</span>
+                      <span
+                        class="product-sku-status ml-5"
+                        id="quickview-product-sku"
                       >
+                        <strong>SKU</strong> -
+                      </span>
+                    </div>
 
-                      <div class="product-info-stock-sku">
-                        <span class="product-stock-status">In Stock</span>
-                        <span
-                          class="product-sku-status ml-5"
-                          id="quickview-product-sku"
-                        >
-                          <strong>SKU</strong> -
-                        </span>
+                    <p class="products-desc" id="quickview-product-description">
+                      Product description will appear here.
+                    </p>
+
+                    <div class="shopping-option-item">
+                      <h4>Color</h4>
+                      <ul class="color-option-select d-flex">
+                        <li class="color-item black">
+                          <div class="color-hvr">
+                            <span class="color-fill"></span>
+                            <span class="color-name">Black</span>
+                          </div>
+                        </li>
+
+                        <li class="color-item green">
+                          <div class="color-hvr">
+                            <span class="color-fill"></span>
+                            <span class="color-name">Green</span>
+                          </div>
+                        </li>
+
+                        <li class="color-item orange">
+                          <div class="color-hvr">
+                            <span class="color-fill"></span>
+                            <span class="color-name">Orange</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="product-quantity d-flex align-items-center">
+                      <div class="quantity-field">
+                        <label for="qty">Qty</label>
+                        <input
+                          type="number"
+                          id="qty"
+                          min="1"
+                          max="100"
+                          value="1"
+                        />
                       </div>
 
-                      <p class="products-desc" id="quickview-product-description">
-                        Product description will appear here.
-                      </p>
-
-                      <div class="shopping-option-item">
-                        <h4>Color</h4>
-                        <ul class="color-option-select d-flex">
-                          <li class="color-item black">
-                            <div class="color-hvr">
-                              <span class="color-fill"></span>
-                              <span class="color-name">Black</span>
-                            </div>
-                          </li>
-
-                          <li class="color-item green">
-                            <div class="color-hvr">
-                              <span class="color-fill"></span>
-                              <span class="color-name">Green</span>
-                            </div>
-                          </li>
-
-                          <li class="color-item orange">
-                            <div class="color-hvr">
-                              <span class="color-fill"></span>
-                              <span class="color-name">Orange</span>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div class="product-quantity d-flex align-items-center">
-                        <div class="quantity-field">
-                          <label for="qty">Qty</label>
-                          <input
-                            type="number"
-                            id="qty"
-                            min="1"
-                            max="100"
-                            value="1"
-                          />
-                        </div>
-
-                        <a
-                          href="cart.html"
-                          class="btn btn-add-to-cart"
-                          id="quickview-add-to-cart"
-                        >
-                          + Add to Cart
-                        </a>
-                      </div>
+                      <a
+                        href="cart.html"
+                        class="btn btn-add-to-cart"
+                        id="quickview-add-to-cart"
+                      >
+                        + Add to Cart
+                      </a>
                     </div>
                   </div>
-                  <!-- Product Details End -->
                 </div>
+                <!-- Product Details End -->
               </div>
             </div>
           </div>
         </div>
       </div>
-  <!--======================= Javascript ============================-->
+    </div>
+    <!--======================= Javascript ============================-->
 
-  <!--=== jQuery ===-->
-  <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+    <!--=== jQuery ===-->
+    <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
 
-  <!--=== jQuery Migrate ===-->
-  <script src="assets/js/vendor/jquery-migrate-1.4.1.min.js"></script>
+    <!--=== jQuery Migrate ===-->
+    <script src="assets/js/vendor/jquery-migrate-1.4.1.min.js"></script>
 
-  <!--=== Popper ===-->
-  <script src="assets/js/vendor/popper.min.js"></script>
+    <!--=== Popper ===-->
+    <script src="assets/js/vendor/popper.min.js"></script>
 
-  <!--=== Bootstrap ===-->
-  <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <!--=== Bootstrap ===-->
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
 
-  <!--=== Plugins (includes Owl, etc.) ===-->
-  <script src="assets/js/plugins.js"></script>
+    <!--=== Plugins (includes Owl, etc.) ===-->
+    <script src="assets/js/plugins.js"></script>
 
-  <!--=== Theme Active Script ===-->
-  <script src="assets/js/active.js"></script>
+    <!--=== Theme Active Script ===-->
+    <script src="assets/js/active.js"></script>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("partials/footer.html")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("footer-placeholder").innerHTML = data;
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-
-    fetch("partials/footer.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("footer-placeholder").innerHTML = data;
-
-    // Wait a tiny moment then initialize owl
-    setTimeout(function () {
-      $(".imgage-gallery-carousel").owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: false,
-        dots: false,
-        autoplay: true,
-        responsive: {
-          0: { items: 4 },
-          576: { items: 4 },
-          768: { items: 4 },
-          992: { items: 6 }
-        }
+            // Wait a tiny moment then initialize owl
+            setTimeout(function () {
+              $(".imgage-gallery-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                responsive: {
+                  0: { items: 4 },
+                  576: { items: 4 },
+                  768: { items: 4 },
+                  992: { items: 6 },
+                },
+              });
+            }, 100);
+          });
       });
-    }, 100);
-  });
-
-
-  });
-  </script>
-  
-    </body>
-  </html>
+    </script>
+  </body>
+</html>
