@@ -48,6 +48,23 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+      .single-product-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-thumb img {
+  height: 280px;
+  object-fit: cover;
+}
+
+.product-details {
+  min-height: 120px;
+}
+    </style>
   </head>
   <body>
     <!--== Header Area Start ==-->
@@ -249,11 +266,12 @@
                   <p>Luxury You Can Trust, Beauty You Can Wear.</p>
 
                   <div class="footer-social-icons">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-flickr"></i></a>
+                    <a href="https://www.facebook.com/share/1BLCJEXRRH/"><i class="fa fa-facebook"></i></a>
+                    <a href="https://x.com/Myarajewelry"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.threads.com/@shopmyara"><i class="fa fa-comments"></i></a>
+                    <a href="https://www.instagram.com/shopmyara?igsh=MW03aXFzd3BsOHdveQ==
+"><i class="fa fa-instagram"></i></a>
+                    <a href="https://youtube.com/@myarajewellery-m5h?si=RBUXkIsRVi4_75eO"><i class="fa fa-youtube"></i></a>
                   </div>
 
                   <!-- <a href="#"
@@ -319,7 +337,7 @@
             <div class="col-lg-12 text-center">
               <div class="copyright-text">
                 <p>
-                  <a target="_blank" href="https://linktr.ee/dnxempire"
+                  <a target="_blank" 
                     >myara</a
                   >
                 </p>
@@ -545,13 +563,10 @@
             <h2>${product.name}</h2>
             <div class="rating">${getRatingStars(product.rating)}</div>
             <span class="price">$${product.price.toFixed(2)}</span>
-        <p class="products-desc">${product.description || ""}</p>
+        <p class="products-desc"> ${(product.description || "").replace(/<[^>]+>/g, "").slice(0, 60)}</p>
 
 
-          </div>
-  ${product.tag ? `<span class="product-bedge ${product.tag.toLowerCase()}">${product.tag}</span>` : ""}
-
-        </div>
+  
       </div>
     `).join("");
 
